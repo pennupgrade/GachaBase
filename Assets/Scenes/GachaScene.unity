@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8664a02b2c3ad9a4ab591e215bd092e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currency: 0
 --- !u!4 &41970306
 Transform:
   m_ObjectHideFlags: 0
@@ -278,6 +279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b7f46138c8ad341bc33234fbb90cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterBank:
+  - {fileID: 3370502648481415629, guid: 64c24dec2b8897b4f9c681b70bab8982, type: 3}
 --- !u!4 &717542517
 Transform:
   m_ObjectHideFlags: 0

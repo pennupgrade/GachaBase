@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour
+[CreateAssetMenu(fileName = "NewMonsterAsset", menuName = "Monster")]
+public class Monster : ScriptableObject
 {
     [SerializeField]
-    protected string name;
+    private string name;
 
     [SerializeField]
-    protected int serialNum;
+    private string sceneName;
 
-    //Contain the behavior that allows you to make money from this creature
-    public virtual void GenerateCurrency()
-    {
-        Debug.Log("Please Implement");
-    }
+    [SerializeField]
+    private Sprite iconSprite;
+
+    public string Name => this.name;
+
+    public string SceneName => this.sceneName;
+
+    public Sprite IconSprite => this.iconSprite;
+
 }

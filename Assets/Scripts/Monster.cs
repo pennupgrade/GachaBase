@@ -1,23 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "NewMonsterAsset", menuName = "Monster")]
-public class Monster : ScriptableObject
+public class Monster : MonoBehaviour
 {
-    [SerializeField]
-    private string name;
+    //public CurrencyManager currencyManager;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
-    [SerializeField]
-    private string sceneName;
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
-    [SerializeField]
-    private Sprite iconSprite;
+    public static void updateGUI()
+    {
+        GameObject.FindGameObjectWithTag("GUI").GetComponent<Text>().text = "Current Funds: " + CurrencyManager.Instance.Currency;
+    }
 
-    public string Name => this.name;
-
-    public string SceneName => this.sceneName;
-
-    public Sprite IconSprite => this.iconSprite;
 
 }

@@ -23,7 +23,7 @@ public class CurrencyManager : MonoBehaviour
     public void SetCurrency(float f)
     {
         currency = f;
-        GetComponent<Text>().text = currency.ToString();
+        //GetComponent<Text>().text = currency.ToString();
     }
     public void AddCurrency(float f)
     {
@@ -46,7 +46,7 @@ public class CurrencyManager : MonoBehaviour
         {
             CurrencyManager.instance = this;
         }
-        GetComponent<Text>().text = currency.ToString();
+        //GetComponent<Text>().text = currency.ToString();
     }
 
     // Update is called once per frame

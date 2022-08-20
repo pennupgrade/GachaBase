@@ -13,6 +13,7 @@ public class InventoryManager : MonoBehaviour
 
     private Dictionary<Monster, bool> ownedMonsters;
 
+    [SerializeField]
     private Canvas canvas;
 
     private void Awake()
@@ -26,7 +27,7 @@ public class InventoryManager : MonoBehaviour
         {
             InventoryManager.instance = this;
         }
-        this.canvas = GetComponent<Canvas>();
+        //this.canvas = GetComponent<Canvas>();
         Hide();
     }
 

@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class TestMonster : MonoBehaviour
+public class TestMonster : Monster
 {
     public void GenerateCurrency()
     {
         CurrencyManager.Instance.Currency += 1;
+        Monster.updateGUI();
     }
 
     // Start is called before the first frame update

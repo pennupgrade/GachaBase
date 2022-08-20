@@ -7,6 +7,8 @@ public class Monster : MonoBehaviour
 {
     //public CurrencyManager currencyManager;
     // Start is called before the first frame update
+    public string name;
+
     void Start()
     {
         

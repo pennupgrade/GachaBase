@@ -9,12 +9,24 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance => InventoryManager.instance;
 
     [SerializeField]
-    private List<Monster> possibleMonsters;
+    public List<Monster> possibleMonsters; //MonsterSO is the scriptable object Monster
 
-    private Dictionary<Monster, bool> ownedMonsters;
+    public Dictionary<string, bool> ownedMonsters;
 
     [SerializeField]
     private Canvas canvas;
+
+    public void updateGUI()
+    {
+        GameObject.FindGameObjectWithTag("GUI").GetComponent<Text>().text = "";
+        string inventoryLog = "";
+        foreach (Monster m in possibleMonsters)
+        {
+            inventoryLog += m.name + " " + ownedMonsters[m.name];
+        }
+        
+        GameObject.FindGameObjectWithTag("GUI").GetComponent<Text>().text = inventoryLog;
+    }
 
     private void Awake()
     {
@@ -43,7 +55,12 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        this.ownedMonsters = new Dictionary<string, bool>();
+        //Eventually update this to maintain saved data
+        foreach (Monster m in possibleMonsters)
+        {
+            ownedMonsters.Add(m.name, false);
+        }
     }
 
     // Update is called once per frame

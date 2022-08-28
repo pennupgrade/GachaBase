@@ -47,6 +47,8 @@ public class GachaBehavior : MonoBehaviour
         {
             Debug.Log("You pulled a: " + pullName);
             playerInventory.ownedMonsters[pullName] = true;
+
+            GUIBehavior.instance.updateDropdown();
         } 
         else
         {

@@ -40,7 +40,7 @@ public class CurrencyManager : MonoBehaviour
         if (CurrencyManager.instance != null && CurrencyManager.instance != this)
         {
             Destroy(this);
-            throw new System.Exception("An instance of this singleton already exists.");
+            //throw new System.Exception("An instance of this singleton already exists.");
         }
         else
         {

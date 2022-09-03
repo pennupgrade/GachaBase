@@ -7,7 +7,8 @@ using UnityEngine.EventSystems;
 
 public class MainManager : MonoBehaviour
 {
-    public static MainManager instance;
+    private static MainManager instance;
+    public static MainManager Instance => MainManager.instance;
     void Awake()
     {
         //Stop DontDestroyOnLoads from Stacking

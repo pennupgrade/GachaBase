@@ -2,6 +2,11 @@ using System.Linq;
 using UnityEngine;
 using UnityEditor;
 
+/**
+* This is a class for initializing the MainManager.
+* Makes sure you don't double add the MainManager.
+* Add this to all scenes for testing.
+*/
 public class InitManager : MonoBehaviour
 {
     void Awake()

@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This is a Scriptable Object.
 [CreateAssetMenu(fileName = "NewMonsterAsset", menuName = "Monster")]
-public class MonsterSO : ScriptableObject
+public class MonsterAsset : ScriptableObject
 {
     [SerializeField]
     private string name;

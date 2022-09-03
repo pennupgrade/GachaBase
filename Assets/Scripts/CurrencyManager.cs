@@ -10,8 +10,8 @@ public class CurrencyManager : MonoBehaviour
     public static CurrencyManager Instance => CurrencyManager.instance;
     // Start is called before the first frame update
     void Start()
-    {
-
+    {   
+        GetComponent<Text>().text = currency.ToString();
     }
 
     [SerializeField]
@@ -23,6 +23,7 @@ public class CurrencyManager : MonoBehaviour
     public void SetCurrency(float f)
     {
         currency = f;
+        GetComponent<Text>().text = currency.ToString();
         //GetComponent<Text>().text = currency.ToString();
     }
     public void AddCurrency(float f)

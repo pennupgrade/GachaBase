@@ -9,23 +9,22 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance => InventoryManager.instance;
 
     [SerializeField]
-    public List<Monster> possibleMonsters; //MonsterSO is the scriptable object Monster
+    private Dropdown menuSelect;
+    
+    private List<string> options;
 
-    public Dictionary<string, bool> ownedMonsters;
+    private CanvasGroup cg;
+
 
     [SerializeField]
-    private Canvas canvas;
+    private List<MonsterAsset> possibleMonsters; //MonsterSO is the scriptable object Monster
+    public List<MonsterAsset> Monsters {
+        get { return possibleMonsters; }
+    }
 
-    public void updateGUI()
-    {
-        GameObject.FindGameObjectWithTag("GUI").GetComponent<Text>().text = "";
-        string inventoryLog = "";
-        foreach (Monster m in possibleMonsters)
-        {
-            inventoryLog += m.name + " " + ownedMonsters[m.name];
-        }
-        
-        GameObject.FindGameObjectWithTag("GUI").GetComponent<Text>().text = inventoryLog;
+    private Dictionary<string, bool> ownedMonsters;
+    public Dictionary<string, bool> Owned {
+        get { return ownedMonsters; }
     }
 
     private void Awake()
@@ -39,36 +38,64 @@ public class InventoryManager : MonoBehaviour
         {
             InventoryManager.instance = this;
         }
-        //this.canvas = GetComponent<Canvas>();
+        this.cg = GetComponent<CanvasGroup>();
         Hide();
     }
 
     public void Hide()
     {
-        this.canvas.enabled = false;
+        //this.canvas.enabled = false;
+        cg.interactable= false;
+        cg.alpha = 0;
     }
     public void Show()
     {
-        this.canvas.enabled = true;
+        //this.canvas.enabled = true;
+        cg.interactable= true;
+        cg.alpha = 1;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        menuSelect.ClearOptions();
+        options = new List<string>();
+        options.Add("Gacha");
+        menuSelect.AddOptions(options);
         this.ownedMonsters = new Dictionary<string, bool>();
         //Eventually update this to maintain saved data
-        foreach (Monster m in possibleMonsters)
+        foreach (MonsterAsset m in possibleMonsters)
         {
             ownedMonsters.Add(m.name, false);
         }
     }
 
+    public void Pull(string pullName) {
+        InventoryManager.Instance.Owned[pullName] = true;
+        updateDropdown();
+    }
+
+    public void updateDropdown()
+    {
+        menuSelect.ClearOptions();
+        options = new List<string>();
+        options.Add("Gacha");
+        foreach (MonsterAsset m in InventoryManager.Instance.Monsters)
+        {
+            if (InventoryManager.Instance.Owned[m.name])
+            {
+                options.Add(m.name);
+            }
+        }
+        menuSelect.AddOptions(options);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Escape))
         {
-            if (this.canvas.enabled)
+            if (cg.alpha > 0)
             {
                 Hide();
             } else
@@ -76,5 +103,29 @@ public class InventoryManager : MonoBehaviour
                 Show();
             }
         } 
+    }
+
+    public void visitPen() {
+        Debug.Log("Clicked: " + menuSelect.value);
+        string clickedMon = options[menuSelect.value];
+        Debug.Log("Clicked: " + clickedMon);
+
+        if (options[0] == "empty") {
+            Debug.Log("You are Monsterless");
+        } else
+        {
+            switch (clickedMon)
+            {
+                case "Gacha":
+                    MainManager.Instance.loadNewLevel("GachaScene");
+                    break;
+                case "TestMonster":
+                    MainManager.Instance.loadNewLevel("TestPenScene");
+                    break;
+                default:
+                    Debug.Log("Selected Mon cannot be reached");
+                    break;
+            }
+        }
     }
 }

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Bingus
   sceneName: TestPenScene
-  iconSprite: {fileID: 21300000, guid: 84165df47071b904abef6a9c251158c8, type: 3}
+  iconSprite: {fileID: 21300000, guid: 589d73a8497ec404fa526d2dbfa46b1d, type: 3}

@@ -66,7 +66,7 @@ public class InventoryManager : MonoBehaviour
         //Eventually update this to maintain saved data
         foreach (MonsterAsset m in possibleMonsters)
         {
-            ownedMonsters.Add(m.name, false);
+            ownedMonsters.Add(m.Name, false);
         }
     }
 
@@ -82,9 +82,9 @@ public class InventoryManager : MonoBehaviour
         options.Add("Gacha");
         foreach (MonsterAsset m in InventoryManager.Instance.Monsters)
         {
-            if (InventoryManager.Instance.Owned[m.name])
+            if (InventoryManager.Instance.Owned[m.Name])
             {
-                options.Add(m.name);
+                options.Add(m.Name);
             }
         }
         menuSelect.AddOptions(options);
@@ -110,22 +110,25 @@ public class InventoryManager : MonoBehaviour
         string clickedMon = options[menuSelect.value];
         Debug.Log("Clicked: " + clickedMon);
 
-        if (options[0] == "empty") {
-            Debug.Log("You are Monsterless");
-        } else
+        if (options[0] == "empty")
         {
-            switch (clickedMon)
+            Debug.Log("You are Monsterless");
+        }
+        else if (clickedMon.Equals("Gacha"))
+        {
+            MainManager.Instance.loadNewLevel("GachaScene");
+        }
+        else if (ownedMonsters.ContainsKey(clickedMon))
+        {
+            MonsterAsset monster = possibleMonsters.Find(m => m.Name.Equals(clickedMon));
+            if (monster != null)
             {
-                case "Gacha":
-                    MainManager.Instance.loadNewLevel("GachaScene");
-                    break;
-                case "TestMonster":
-                    MainManager.Instance.loadNewLevel("TestPenScene");
-                    break;
-                default:
-                    Debug.Log("Selected Mon cannot be reached");
-                    break;
+                MainManager.Instance.loadNewLevel(monster.SceneName);
             }
+        }
+        else
+        {
+            Debug.Log("Selected Mon cannot be reached");
         }
     }
 }

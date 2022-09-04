@@ -56,13 +56,13 @@ public class GachaBehavior : MonoBehaviour
         CurrencyManager.Instance.Currency -= ROLL_COST;
 
         //Fuck with probabilities here for rarer items hehe
-        int roll = (int)(Random.Range(0, numOfMonsters - 1));
+        int roll = Random.Range(0, numOfMonsters);
         Debug.Log("You rolled a: " + roll);
 
         //Update the player's inventory directly from here
 
         MonsterAsset pulledMonster = InventoryManager.Instance.Monsters[roll];
-        string pullName = pulledMonster.name;
+        string pullName = pulledMonster.Name;
         ShowCard(pulledMonster.IconSprite);
         if (!InventoryManager.Instance.Owned[pullName])
         {

@@ -7,7 +7,7 @@ using UnityEngine;
 public class MonsterAsset : ScriptableObject
 {
     [SerializeField]
-    private string name;
+    private string monsterName;
 
     [SerializeField]
     private string sceneName;
@@ -15,7 +15,7 @@ public class MonsterAsset : ScriptableObject
     [SerializeField]
     private Sprite iconSprite;
 
-    public string Name => this.name;
+    public string Name => this.monsterName;
 
     public string SceneName => this.sceneName;
 

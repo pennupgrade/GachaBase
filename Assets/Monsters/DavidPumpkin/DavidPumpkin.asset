@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3aedba6b545fd4b8fd9e0ee9ff50d8, type: 3}
   m_Name: DavidPumpkin
   m_EditorClassIdentifier: 
-  monsterName: 
-  sceneName: 
-  iconSprite: {fileID: 0}
+  monsterName: David Pumpkin
+  sceneName: DavidPumpkin
+  iconSprite: {fileID: 21300000, guid: d993891d8f4ae8d4e95422504e01b40b, type: 3}

@@ -5,34 +5,39 @@ using UnityEngine.UI;
 
 public class Coin : MonoBehaviour
 {
-    int coinType; 
+    public Vector3 dir;
+    public int coinType; 
+    private int coinNum;
+    public SpriteRenderer spriteRenderer;
+    public Sprite coinSprite;
+    public Sprite coinStackSprite;
+    public Sprite ghostCoinSprite;
 
-    public void GenerateCurrencyStack()
-    {
-        // This line adds 4 to our currency.
-        CurrencyManager.Instance.Currency += 4;
-    }
-
-    public void SubtractCurrency() {
-        // This line subtracts 1 to our currency.
-        CurrencyManager.Instance.Currency -= 1;
-    }
-
-    public void GenerateCurrency() {
-        // This line adds 1 to our currency.
-        CurrencyManager.Instance.Currency += 1;
+    public void GenerateCurrency(int coinNum) {
+        if (CurrencyManager.Instance.Currency + coinNum >= 0) {
+            CurrencyManager.Instance.Currency += coinNum;
+        }
     }
 
     void Awake() {
         // Assign coinType
         // Read coinType from input
-
+        if (coinType == 0) {
+            spriteRenderer.sprite = coinSprite;
+            coinNum = 1;
+        } else if (coinType == 1) {
+            spriteRenderer.sprite = coinStackSprite;
+            coinNum = 4;
+        } else {
+            spriteRenderer.sprite = ghostCoinSprite;
+            coinNum = -1;
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -44,16 +49,11 @@ public class Coin : MonoBehaviour
             //Debug.Log(ray);
             RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
             if (hit.collider != null) {
-                if (coinType == 0) {
-                    GenerateCurrency();
-                } else if (coinType == 1) {
-                    GenerateCurrencyStack();
-                } else if (coinType == 2) {
-                    SubtractCurrency();
-                } else {
-                    // Throw error
-                }
+                GenerateCurrency(coinNum);
             }
+            Destroy(gameObject);
         }
+        //move 
+        this.transform.position += Time.deltaTime * dir * 0.5f;
     }
 }

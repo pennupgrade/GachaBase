@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Monsters/Duk/DukPen.unity
     guid: ed929ed24fc984ffb8fd90747ee70f82
   - enabled: 1
+    path: Assets/Monsters/Oren Ji/OrenJi.unity
+    guid: bf4138e6c884ff24385068c7df31e581
+  - enabled: 1
     path: Assets/Monsters/Bingus/TestPenScene.unity
     guid: 141c33ba0c36bc64a9f449b41ccf4ef5
   - enabled: 1

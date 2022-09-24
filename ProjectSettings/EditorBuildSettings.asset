@@ -27,4 +27,15 @@ EditorBuildSettings:
     path: Assets/Monsters/Duk/DukPen.unity
     guid: ed929ed24fc984ffb8fd90747ee70f82
   - enabled: 1
+    path: Assets/Monsters/Bingus/TestPenScene.unity
+    guid: 141c33ba0c36bc64a9f449b41ccf4ef5
+  - enabled: 1
+    path: Assets/Monsters/MrOdee/MrOdee Scene.unity
+    guid: 67f5107bd145d6f459f8493937ee253e
+  - enabled: 1
+    path: Assets/Monsters/Skates McGee/SkatesMcGeeScene.unity
+    guid: 00d75c92bf3394749b4ca2c81987ea31
+  - enabled: 1
+    path: Assets/Monsters/Typing Lion/TypingLionScene.unity
+    guid: d0b2c7a7528e98d4e89a3dd91c5bffd6
   m_configObjects: {}

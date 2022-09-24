@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Monster
   - GUI
+  - Coins
+  - End
   layers:
   - Default
   - TransparentFX

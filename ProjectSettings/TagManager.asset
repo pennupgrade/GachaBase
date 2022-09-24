@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Monster
   - GUI
+  - Obstacle
   layers:
   - Default
   - TransparentFX

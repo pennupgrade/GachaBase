@@ -8,6 +8,8 @@ TagManager:
   - GUI
   - Coins
   - End
+  - Obstacle
+  
   layers:
   - Default
   - TransparentFX

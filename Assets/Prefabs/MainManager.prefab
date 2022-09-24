@@ -1077,11 +1077,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuSelect: {fileID: 9064457286375925106}
   possibleMonsters:
-  - {fileID: 11400000, guid: bceb381557a149b49a643d850aadb9a5, type: 2}
+  - {fileID: 11400000, guid: 5216bc0d85ab7ad45ad8483a547d5757, type: 2}
   - {fileID: 11400000, guid: a394ae02df0ae504d9475fc57291464e, type: 2}
   - {fileID: 11400000, guid: 643e57f06fd20b943824c8c7303db348, type: 2}
   - {fileID: 11400000, guid: e13514b584180144eb7a1245f3a15293, type: 2}
   - {fileID: 11400000, guid: f2970ec5339e34cf6ba30308ed3307f2, type: 2}
+  - {fileID: 11400000, guid: d4df5952b949c4e2a853f740c53d6c53, type: 2}
+  - {fileID: 11400000, guid: 855a937c582194e46bb45b90d4b9d46f, type: 2}
+  - {fileID: 11400000, guid: da1b4ab323ed29b4bae06d885b44096e, type: 2}
+  - {fileID: 11400000, guid: c8b578430825b44d89d482f31227b8b3, type: 2}
+  - {fileID: 11400000, guid: 1e799e54ba0f54e5bb9580b82650ae02, type: 2}
+  - {fileID: 11400000, guid: c650ee12b388951468d9535bf87844d0, type: 2}
+  - {fileID: 11400000, guid: 35ab474a133b7dc4084deffc93f65a3b, type: 2}
 --- !u!225 &7427638630210630257
 CanvasGroup:
   m_ObjectHideFlags: 0

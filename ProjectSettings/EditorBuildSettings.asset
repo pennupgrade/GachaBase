@@ -8,12 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GachaScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: 
-    guid: 773ae6f62208a9442a3d1459b558b907
-  - enabled: 1
-    path: Assets/Monsters/Bingus/TestPenScene.unity
-    guid: dc07ccc38aa8de94ab70c48832ccb38e
   - enabled: 1
     path: Assets/Monsters/Turnip/TurnipPen.unity
     guid: 62058280ba2a4bd40825b0aa7edaaa45
@@ -26,4 +20,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Monsters/Flint/level.unity
     guid: 538406057ad544443b1954b878d353a2
+  - enabled: 1
+    path: Assets/Monsters/Geoff/GeoffScene.unity
+    guid: b0563ca375bc743d6a3225ed0629deb2
+  - enabled: 1
+    path: Assets/Monsters/Golem/GolemScene.unity
+    guid: 22e609ada027e37478735883aadc5148
+  - enabled: 1
+    path: Assets/Monsters/Duk/DukPen.unity
+    guid: ed929ed24fc984ffb8fd90747ee70f82
+  - enabled: 1
+    path: Assets/Monsters/Bingus/TestPenScene.unity
+    guid: 141c33ba0c36bc64a9f449b41ccf4ef5
+  - enabled: 1
+    path: Assets/Monsters/MrOdee/MrOdee Scene.unity
+    guid: 67f5107bd145d6f459f8493937ee253e
+  - enabled: 1
+    path: Assets/Monsters/Skates McGee/SkatesMcGeeScene.unity
+    guid: 00d75c92bf3394749b4ca2c81987ea31
+  - enabled: 1
+    path: Assets/Monsters/Typing Lion/TypingLionScene.unity
+    guid: d0b2c7a7528e98d4e89a3dd91c5bffd6
+  - enabled: 1
+    path: Assets/Monsters/Boxee/BoxeePen (Scene).unity
+    guid: a119a2d846d0d3646ba03c80c6ea16f9
   m_configObjects: {}

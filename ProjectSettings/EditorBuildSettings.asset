@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Monsters/Typing Lion/TypingLionScene.unity
     guid: d0b2c7a7528e98d4e89a3dd91c5bffd6
+  - enabled: 1
+    path: Assets/Monsters/Boxee/BoxeePen (Scene).unity
+    guid: a119a2d846d0d3646ba03c80c6ea16f9
   m_configObjects: {}

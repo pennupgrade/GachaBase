@@ -6,15 +6,20 @@ TagManager:
   tags:
   - Monster
   - GUI
+  - Activator
+  - Coins
+  - End
+  - Obstacle
+  
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Foreground
   - 
   - 
   - 
@@ -42,4 +47,15 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: DDR Arrows
+    uniqueID: 1810663857
+  - name: Background
+    uniqueID: 3194329473
+    locked: 0
+  - name: Player
+    uniqueID: 3897732121
+    locked: 0
+  - name: Foreground
+    uniqueID: 2569729297
     locked: 0

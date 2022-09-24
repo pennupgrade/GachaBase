@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 594077151}
   - component: {fileID: 594077150}
   - component: {fileID: 594077152}
+  - component: {fileID: 594077153}
   m_Layer: 0
   m_Name: Turnip
   m_TagString: Untagged
@@ -224,6 +225,22 @@ MonoBehaviour:
   up: {fileID: 21300000, guid: a64d7c77efb7630449e50b7836d27c89, type: 3}
   right: {fileID: 21300000, guid: f59e0f73652eb4c4b9983f333209dcee, type: 3}
   down: {fileID: 21300000, guid: 4eb85714d96b11543bdea23a0fbb9802, type: 3}
+--- !u!114 &594077153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594077149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77c90715b540244694b2b45825fedf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  left: {fileID: 0}
+  up: {fileID: 0}
+  right: {fileID: 0}
+  down: {fileID: 0}
 --- !u!1001 &1107399440
 PrefabInstance:
   m_ObjectHideFlags: 0

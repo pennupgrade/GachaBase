@@ -22,22 +22,34 @@ public class Coin : MonoBehaviour
     void Awake() {
         // Assign coinType
         // Read coinType from input
-        if (coinType == 0) {
-            spriteRenderer.sprite = coinSprite;
-            coinNum = 1;
-        } else if (coinType == 1) {
-            spriteRenderer.sprite = coinStackSprite;
-            coinNum = 4;
-        } else {
-            spriteRenderer.sprite = ghostCoinSprite;
-            coinNum = -1;
-        }
+        
+        Invoke("DestroyCoin", 10f);
+    }
+
+    void DestroyCoin() {
+        Destroy(gameObject);
+        Debug.Log("Obj destroyed.");
     }
 
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        coinType = Random.Range(0, 3);
+        if (coinType == 0) {
+            spriteRenderer.sprite = coinSprite;
+            coinNum = 1;
+        } else if (coinType == 1) {
+            spriteRenderer.sprite = coinStackSprite;
+            Vector2 sizeIncre = new Vector2(4f, 4f);
+            this.GetComponent<BoxCollider2D>().size += sizeIncre;
+            coinNum = 4;
+        } else {
+            spriteRenderer.sprite = ghostCoinSprite;
+            Vector2 sizeIncre = new Vector2(4f, 4f);
+            this.GetComponent<BoxCollider2D>().size += sizeIncre;
+            coinNum = -1;
+        }
     }
 
     // Update is called once per frame
@@ -48,10 +60,10 @@ public class Coin : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             //Debug.Log(ray);
             RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
-            if (hit.collider != null) {
+            if (hit.collider == this.GetComponent<Collider2D>()) {
                 GenerateCurrency(coinNum);
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
         }
         //move 
         this.transform.position += Time.deltaTime * dir * 0.5f;

@@ -44,18 +44,18 @@ public class pumpkinMove : MonoBehaviour
     }
 
     void throwCoin() {
+        spriteRenderer.sprite = throwSprite;
         //There will be modes of throwing, for now we just aim for the center
         Vector3 randomPos = new Vector3(-this.transform.position.x, -this.transform.position.y, 0f);
-        GameObject coin = Instantiate(coinPrefab, this.transform);
-        int coinType = Random.Range(0, 2);
+        Vector3 copyPosition = new Vector3(this.transform.position.x, this.transform.position.y, 0.5f);
+        GameObject coin = Instantiate(coinPrefab, copyPosition, this.transform.rotation);
+        //int coinType = Random.Range(0, 2);
         Coin newCoin = coin.GetComponent<Coin>();
         newCoin.dir = randomPos;
-        newCoin.coinType = coinType;
-        newCoin.spriteRenderer.sprite = newCoin.coinSprite;
+        //newCoin.coinType = coinType;
         //play animation/change sprite 
-        spriteRenderer.sprite = throwSprite;
-        Invoke("changeSprite", 0.5f);
-        Invoke("throwCoin", 2.0f);
+        Invoke("changeSprite", 0.2f);
+        Invoke("throwCoin", 2f);
     }
 
     void changeSprite() {

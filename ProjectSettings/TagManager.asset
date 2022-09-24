@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Monster
   - GUI
+  - Activator
   - Coins
   - End
   - Obstacle
@@ -47,6 +48,8 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: DDR Arrows
+    uniqueID: 1810663857
   - name: Background
     uniqueID: 3194329473
     locked: 0

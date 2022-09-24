@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Monsters/Ringus/RingusPen.unity
     guid: ec0b624f157f9614da36c891799c01c3
+  - enabled: 1
+    path: Assets/Monsters/Boxee/BoxeePen (Scene).unity
+    guid: a119a2d846d0d3646ba03c80c6ea16f9
   m_configObjects: {}

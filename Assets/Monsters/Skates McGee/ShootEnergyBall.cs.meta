@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 0df845d15d7094c159836c8ad06d82c8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - energyBall: {fileID: 6943481655508660498, guid: 0041e122a53114506865904d6a204bca, type: 3}
+  - shooter: {fileID: 6445556005546357630, guid: 210d1d4e02ef34ab18a1c171392ffc31, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

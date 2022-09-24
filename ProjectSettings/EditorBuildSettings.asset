@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Monsters/DDR/DDRScene.unity
     guid: c030b0ae029269d4bbc2a845f92f725c
+  - enabled: 1
+    path: Assets/Monsters/DavidPumpkin/DavidPumpkin.unity
+    guid: 946ba0fe9f78a4b7d9ad3260ad67516f
   m_configObjects: {}

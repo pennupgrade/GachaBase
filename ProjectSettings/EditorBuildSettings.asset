@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Monsters/Boxee/BoxeePen (Scene).unity
     guid: a119a2d846d0d3646ba03c80c6ea16f9
+  - enabled: 1
+    path: Assets/Monsters/Vampyropoda/VampyropodaPen.unity
+    guid: 4632df1c41b7fc54eb1a8237cdfe1402
   m_configObjects: {}

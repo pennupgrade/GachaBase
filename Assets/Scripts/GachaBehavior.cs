@@ -81,6 +81,7 @@ public class GachaBehavior : MonoBehaviour
     public void ShowCard(Sprite s) {
         cardImage.GetComponent<Image>().sprite = s;
         cardImage.enabled = true;
+        cardImage.transform.rotation = Quaternion.Euler(90,0,0);
         
         cardButton.GetComponent<CanvasGroup>().alpha = 1;
         cardButton.GetComponent<CanvasGroup>().interactable = true;

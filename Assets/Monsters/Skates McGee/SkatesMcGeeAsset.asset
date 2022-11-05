@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3aedba6b545fd4b8fd9e0ee9ff50d8, type: 3}
   m_Name: SkatesMcGeeAsset
   m_EditorClassIdentifier: 
-  monsterName: 
-  sceneName: 
-  iconSprite: {fileID: 0}
+  monsterName: SkatesMcGee
+  sceneName: SkatesMcGeeScene
+  iconSprite: {fileID: 21300000, guid: d7a37723d0c4b47619cc11c74274e695, type: 3}

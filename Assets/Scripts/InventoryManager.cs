@@ -66,7 +66,7 @@ public class InventoryManager : MonoBehaviour
         //Eventually update this to maintain saved data
         foreach (MonsterAsset m in possibleMonsters)
         {
-            ownedMonsters.Add(m.Name, false);
+            ownedMonsters[m.Name] = false;
         }
     }
 

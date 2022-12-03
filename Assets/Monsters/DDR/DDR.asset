@@ -15,3 +15,5 @@ MonoBehaviour:
   monsterName: DDR
   sceneName: DDRScene
   iconSprite: {fileID: 21300000, guid: deecc8f1e22755a4ea69afbcbea3ab1d, type: 3}
+  transparentSprite: {fileID: 0}
+  description: 

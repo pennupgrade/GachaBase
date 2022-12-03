@@ -9,6 +9,9 @@ public class MainManager : MonoBehaviour
 {
     private static MainManager instance;
     public static MainManager Instance => MainManager.instance;
+
+    public GameObject backButton;
+    
     void Awake()
     {
         //Stop DontDestroyOnLoads from Stacking
@@ -62,6 +65,15 @@ public class MainManager : MonoBehaviour
         {
             //Monster penMon = GameObject.FindGameObjectWithTag("Monster").GetComponent<TestMonster>();
             //penMon.currencyManager = this.currencyManager;
+        }
+
+        if (scene.name == "GachaScene")
+        {
+            backButton.SetActive(false);
+        }
+        else
+        {
+            backButton.SetActive(true);
         }
     }
 }

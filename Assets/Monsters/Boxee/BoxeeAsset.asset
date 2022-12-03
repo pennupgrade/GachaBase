@@ -15,3 +15,5 @@ MonoBehaviour:
   monsterName: Boxee
   sceneName: BoxeePen (Scene)
   iconSprite: {fileID: 21300000, guid: 928ac0e6fe91536449ae4437064778ca, type: 3}
+  transparentSprite: {fileID: 21300000, guid: e5232987d8474ca418b0bead68cdae5b, type: 3}
+  description: awfuowievnufoiweuvf?!?!?!

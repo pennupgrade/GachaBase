@@ -15,3 +15,11 @@ MonoBehaviour:
   monsterName: Vampyropoda
   sceneName: VampyropodaPen
   iconSprite: {fileID: 21300000, guid: ca451a10945cdea44ba00691a61e7bb0, type: 3}
+  transparentSprite: {fileID: 21300000, guid: d178af848af8084429198232c13c1e50, type: 3}
+  description: "Team Name: Bigger is Better \n\nDescription: A centuries old octopus
+    vampire who sinks ships to suck the life force of her victims and steal their
+    treasure She loves gold and gems. Help her collect the sunken treasures before
+    they drift away and are lost forever! \n\nBackstory: She\u2019s a centuries old
+    octopus vampire who sinks ships to suck the life force of her victims and steal
+    their treasure.\n\nInstructions: Help Vampyropoda collect the sunken treasures
+    before they drift away! "

@@ -8,23 +8,34 @@ public class GachaCardBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerE
     bool mouse_over = false;
     private Quaternion initialRotation;
 
+    public float xTiltFactor = 50f;
+
+    public float yTiltFactor = 25f;
+
+    public float targetScaleFactor;
+    private Vector3 targetScale;
 
     // Start is called before the first frame update
     void Start()
     {
         initialRotation = gameObject.transform.rotation;
+        Debug.Log(transform.position.y);
+        targetScale = transform.localScale * targetScaleFactor;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, 0.05f);
+
         if (mouse_over)
         {
             transform.rotation = Quaternion.Lerp(
                 transform.rotation,
                 Quaternion.Euler(
-                    - 0.05f * (transform.position.y - Input.mousePosition.y),
-                    0.1f * (transform.position.x - Input.mousePosition.x),
+                    - yTiltFactor * (0.5f - Input.mousePosition.y / Screen.height),
+                    xTiltFactor * (0.5f - Input.mousePosition.x / Screen.width),
                     0
                 ),
                 0.05f
@@ -40,12 +51,10 @@ public class GachaCardBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerE
     public void OnPointerEnter(PointerEventData eventData)
     {
         mouse_over = true;
-        Debug.Log("Mouse enter");
     }
  
     public void OnPointerExit(PointerEventData eventData)
     {
         mouse_over = false;
-        Debug.Log("Mouse exit");
     }
 }

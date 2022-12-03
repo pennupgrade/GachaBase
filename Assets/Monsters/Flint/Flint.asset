@@ -15,3 +15,16 @@ MonoBehaviour:
   monsterName: Flint
   sceneName: level
   iconSprite: {fileID: 21300000, guid: de97c7fa90d454106b8518fa978f2d05, type: 3}
+  transparentSprite: {fileID: 21300000, guid: 7e0481b094ccee24ba260a20d8ac2502, type: 3}
+  description: 'Team Name: Ethereal Spork
+
+
+    Description: A one-armed floating
+    rock.
+
+    Use WASD and Space to navigate an obstacle course for money!
+
+
+    Backstory:
+    Flint lost one of his arms in an intoxicated duel with his nemesis, a giant sewer
+    rat.'

@@ -15,3 +15,15 @@ MonoBehaviour:
   monsterName: Golem
   sceneName: GolemScene
   iconSprite: {fileID: 21300000, guid: 25bc206fc1734bf42b17673778a5ab7c, type: 3}
+  transparentSprite: {fileID: 21300000, guid: 0f7e834cdf6e88e41b1773e495ddd746, type: 3}
+  description: 'Team Name: Rock Babies
+
+
+    Description: Sometimes life is rocky.
+
+    Click
+    on Rocky to make it go boom and collect coins!
+
+
+    Backstory: Rocky was originally
+    supposed to explode into 5 rock babies which is where our team name comes from!'

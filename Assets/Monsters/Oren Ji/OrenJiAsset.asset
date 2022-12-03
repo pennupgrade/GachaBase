@@ -15,3 +15,8 @@ MonoBehaviour:
   monsterName: Oren-Ji
   sceneName: OrenJi
   iconSprite: {fileID: 21300000, guid: 3bec1e1dbc5e3374093d8880fbd0ae10, type: 3}
+  transparentSprite: {fileID: 21300000, guid: b46ab754bbb3f3640b9626b6ed44f816, type: 3}
+  description: "Team Name: 10/10\n\nDescription: Not an intimidating lizard but a
+    juicy orange.\nPress space bar to help it jump!\n\nBackstory: Oren-Ji is grown
+    in Asia and it swam all the way here through the Pacific Ocean! \nRate Oren-Ji\u2019s
+    swimming skills \u2014\u2014 10/10!"

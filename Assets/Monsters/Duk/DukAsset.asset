@@ -15,3 +15,6 @@ MonoBehaviour:
   monsterName: Duk
   sceneName: DukPen
   iconSprite: {fileID: 21300000, guid: c0e7cd7e4cc0d4b038b21283b3fc0df8, type: 3}
+  transparentSprite: {fileID: 21300000, guid: c0a93f70a937e3c41a6c2bcf448e04a9, type: 3}
+  description: "Team Name: Turtle Duck\n\nDescription: It\u2019s a turtle,\nIt\u2019s
+    a duck,\nIt\u2019s a turtle-duck!\n\nBackstory: Inspired by Avatar the Last Airbender."

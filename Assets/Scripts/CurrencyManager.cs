@@ -22,7 +22,7 @@ public class CurrencyManager : MonoBehaviour
     }
     public void SetCurrency(float f)
     {
-        currency = f;
+        currency = Mathf.Max(0,f);
         GetComponent<Text>().text = currency.ToString();
         //GetComponent<Text>().text = currency.ToString();
     }

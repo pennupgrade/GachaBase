@@ -93,6 +93,7 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Escape))
         {
             if (cg.alpha > 0)
@@ -103,6 +104,7 @@ public class InventoryManager : MonoBehaviour
                 Show();
             }
         } 
+        */
     }
 
     public void visitPen() {

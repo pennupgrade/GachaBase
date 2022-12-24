@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class GachaBehavior : MonoBehaviour
+public class GachaChest : MonoBehaviour
 {
 
     private int numOfMonsters;
@@ -22,13 +22,33 @@ public class GachaBehavior : MonoBehaviour
         get { return ROLL_COST; }
     } 
 
-    //Reference to player info
+
+    private Vector3 initialScale;
+    public float targetScaleFactor;
+    public float clickScaleFactor;
+    private Vector3 targetScale;
+
     
+
+    private bool mousedOver;
+
+    //Reference to player info
+    private Animator animator;
+
+    bool isOpening;
+    float showCardTime;
+
     // Start is called before the first frame update
     void Start()
     {
         HideCard();
         LoadGacha();
+
+        animator = GetComponent<Animator>();
+        
+        initialScale = transform.localScale;
+        targetScale = transform.localScale * targetScaleFactor;
+        
     }
 
     //Called in start()? to fill the bank with all the possible types of monsters?
@@ -37,23 +57,68 @@ public class GachaBehavior : MonoBehaviour
         numOfMonsters = InventoryManager.Instance.Monsters.Count;
     }
 
+    bool IsInFocus()
+    {
+        if (!mousedOver || cardImage.enabled || isOpening)
+        {
+            return false;
+        }
+        // check if a monster icon is covering the chest
+        foreach (ClickableMonsterIcon m in ClickableMonsterIcon.MonsterIcons)
+            {
+                if (m.HasFocus) {
+                    return false;
+                }
+            }
+
+        // TODO: check if gacha card is in front
+        return true;
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if (isOpening)
+        {
+            transform.localScale *= 1.002f;
+            if (Time.time >= showCardTime)
+            {
+                Roll();
+                isOpening = false;
+            }
+        }
+        
+        else if (IsInFocus()) {
+            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, 0.05f);
+            if (Input.GetMouseButtonDown(0))
+            {
+                AttemptRoll();
+            }
+        }
+        else
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, initialScale, 0.05f);
+        }
+    }
+
+    public void AttemptRoll()
+    {
+        if (CurrencyManager.Instance.Currency < ROLL_COST) {
+            Debug.Log("You don't have enough money for that.");
+            // a little bump for responsiveness even if you don't have enough money
+            transform.localScale = targetScale * clickScaleFactor;
+            return;
+        }
+        animator.SetTrigger("Open");
+        isOpening = true;
+        showCardTime = Time.time + 1f;
+        CurrencyManager.Instance.Currency -= ROLL_COST;
 
     }
 
     //Spits out a Random Monster from the bank
     public void Roll()
     {
-
-        Debug.Log(CurrencyManager.Instance);
-        if (CurrencyManager.Instance.Currency < ROLL_COST) {
-            Debug.Log("You don't have enough money for that.");
-            return;
-        }
-        CurrencyManager.Instance.Currency -= ROLL_COST;
 
         //Fuck with probabilities here for rarer items hehe
         int roll = Random.Range(0, numOfMonsters);
@@ -91,6 +156,16 @@ public class GachaBehavior : MonoBehaviour
         cardImage.enabled = false;
         cardButton.GetComponent<CanvasGroup>().alpha = 0;
         cardButton.GetComponent<CanvasGroup>().interactable = false;
+    }
+
+    private void OnMouseOver()
+    {
+        mousedOver = true;
+    }
+
+    private void OnMouseExit()
+    {
+        mousedOver = false;
     }
 
 }

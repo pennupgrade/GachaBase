@@ -25,6 +25,8 @@ public class ClickableMonsterIcon : MonoBehaviour
     private bool mousedOver;
     private bool hasFocus;
 
+    public bool HasFocus => hasFocus;
+
 
     private static List<ClickableMonsterIcon> monsterIcons = null;
     public static List<ClickableMonsterIcon> MonsterIcons => monsterIcons;
@@ -56,7 +58,6 @@ public class ClickableMonsterIcon : MonoBehaviour
         intialPosition = transform.position;
         initialScale = transform.localScale;
         activeScale = new Vector3(activeScaleFactor, activeScaleFactor, activeScaleFactor);
-
 
         if (monsterIcons == null)
         {

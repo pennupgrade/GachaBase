@@ -19,7 +19,6 @@ public class GachaCardBehaviour : MonoBehaviour, IPointerEnterHandler, IPointerE
     void Start()
     {
         initialRotation = gameObject.transform.rotation;
-        Debug.Log(transform.position.y);
         targetScale = transform.localScale * targetScaleFactor;
 
     }

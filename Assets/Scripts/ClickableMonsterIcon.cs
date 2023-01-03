@@ -117,6 +117,7 @@ public class ClickableMonsterIcon : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0)) // if you click away from monster, lose focus
                 {
+                    Unfocus();
                     MainManager.Instance.loadNewLevel(monster.SceneName);
                 }
 

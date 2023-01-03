@@ -31,4 +31,9 @@ public class MenuScript : MonoBehaviour
     {
         SceneManager.LoadScene("CreditScene");
     }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("MenuScreen");
+    }
 }

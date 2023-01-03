@@ -120,7 +120,6 @@ public class ClickableMonsterIcon : MonoBehaviour
                     Unfocus();
                     MainManager.Instance.loadNewLevel(monster.SceneName);
                 }
-
             }
             else 
             {

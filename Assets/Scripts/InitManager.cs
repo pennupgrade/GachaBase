@@ -9,13 +9,14 @@ using UnityEditor;
 */
 public class InitManager : MonoBehaviour
 {
+    public GameObject mainManager;
     void Awake()
     {
-        var asset = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/MainManager.prefab");
+        //var asset = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/MainManager.prefab");
         var gameObject = Object.FindObjectsOfType<MainManager>().FirstOrDefault();
-        if (gameObject == null)
+        if (gameObject == null && mainManager != null)
         {
-            var obj = GameObject.Instantiate(asset);
+            var obj = GameObject.Instantiate(mainManager);
             obj.name = "MainManager";
             Debug.Log("Added new MainManager prefab instance to scene");
         }

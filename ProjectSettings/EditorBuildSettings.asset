@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CreditScene.unity
     guid: 5ff068dbdd84a46308eae49bb3cf3159
+  - enabled: 1
+    path: Assets/Monsters/TimbBear/TimbBearScene.unity
+    guid: e584fa9d8d49e7e4daf290d1775bf576
   m_configObjects: {}

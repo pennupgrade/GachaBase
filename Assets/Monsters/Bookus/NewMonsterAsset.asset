@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3aedba6b545fd4b8fd9e0ee9ff50d8, type: 3}
+  m_Name: NewMonsterAsset
+  m_EditorClassIdentifier: 
+  monsterName: Bookus
+  sceneName: BookusScene
+  iconSprite: {fileID: 21300000, guid: 94d5df43e2ede544b8ff8d4840d7d54b, type: 3}
+  transparentSprite: {fileID: 21300000, guid: 136476150fe227d4aaee18b0b92e59b5, type: 3}
+  description: 

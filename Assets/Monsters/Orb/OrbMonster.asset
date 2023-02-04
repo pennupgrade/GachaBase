@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3aedba6b545fd4b8fd9e0ee9ff50d8, type: 3}
+  m_Name: OrbMonster
+  m_EditorClassIdentifier: 
+  monsterName: Orb of material desire
+  sceneName: OrbScene
+  iconSprite: {fileID: 21300000, guid: b8a38e8fd04714f9b9ccd09a2a9fe030, type: 3}
+  transparentSprite: {fileID: 21300000, guid: f4915f10aeb91428a82e2c8f66daea63, type: 3}
+  description: It is a mysterious ancient artefact that can turn certain other materials
+    into gold. Upon closer inspection, one can see that this orb is in fact alive.
+    From time to time, one may catch it spinning or bouncing around on its own, in
+    an effort to find more materials to turn...

@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-using coins = CurrencyManager.Instance.Currency;
-using posX = transform.position.x;
-using posY = transform.position.y;
-
 // This Script controlls static enemy behavior
 public class Enemy : MonoBehaviour
 {
@@ -14,9 +10,9 @@ public class Enemy : MonoBehaviour
     limitX: Halved horizontal limit from 0.
     speed: Speed of the enemy.
     */
-    float speed = 2f;
+    float speed = -1.5f;
 
-    float limitX = -15f;
+    float limitX = -9f;
 
     /* 
     Implement Spawn from a scene Controller
@@ -33,16 +29,16 @@ public class Enemy : MonoBehaviour
 
     /* Controlls enemy movement */
     void enemyMovement() {
-        transform.Translate(0, speed * Time.deltaTime, 0);
+        transform.Translate(speed * Time.deltaTime, 0, 0);
     }
 
     /* 
     Explodes if the Player is intercepted.
     Input: Collision container. Output: None.
      */
-    private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Player");
-        // it should destroy itself
+    void OnCollisionEnter2D(Collision2D other) {
+        Debug.Log("Collision Enemy" + other.gameObject.name);
+        if (other.gameObject.tag == "Player") redButton();
     }
 
     void redButton() { Destroy(gameObject); }

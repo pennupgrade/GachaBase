@@ -25,8 +25,14 @@ public class Projectile : MonoBehaviour
     Input: Collision container. Output: None.
      */
     private void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log("Collision Projectile" + other.gameObject.name);
-        if (other.gameObject.tag == "Obstacle") redButton();
+        if (other.gameObject.tag == "Obstacle") {
+            AddCurrency();
+            redButton();
+        }
+    }
+
+    public void AddCurrency() {
+        CurrencyManager.Instance.Currency++;
     }
 
     void redButton() { Destroy(gameObject); }

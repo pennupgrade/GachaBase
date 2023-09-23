@@ -37,9 +37,11 @@ public class Enemy : MonoBehaviour
     Input: Collision container. Output: None.
      */
     void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log("Collision Enemy" + other.gameObject.name);
-        if (other.gameObject.tag == "Player") redButton();
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Activator") redButton();
     }
 
-    void redButton() { Destroy(gameObject); }
+    void redButton() { 
+        EnemyManager.DestroyMe();
+        Destroy(gameObject); 
+    }
 }

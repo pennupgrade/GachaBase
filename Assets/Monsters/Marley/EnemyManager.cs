@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    private int counter = 0;
+    private static int counter = 0;
     public int limitPosX = 12;
     public int limitNetX = 9;
     public int limitY = 4;
@@ -21,5 +21,8 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
+    public static void DestroyMe() {
+        counter--;
+    }
 
 }

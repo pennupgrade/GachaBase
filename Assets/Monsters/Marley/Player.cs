@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
     */
     const float limitX  = 8f;
     const float limitY = 4.5f;
-    const float speed = 3f;
+    const float speed = 3.5f;
     const float offset = 0.8f;
 
     [SerializeField] private GameObject projectile;
@@ -57,15 +57,10 @@ public class Player : MonoBehaviour {
     Input: Collision container. Output: None.
      */
     void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log("Collision Player" + other.gameObject.name);
         if (other.gameObject.tag == "Obstacle") RemoveCurrency(1); 
     }
 
     /* Currency Instance Handlers */
-
-    public void AddCurrency() {
-        CurrencyManager.Instance.Currency++;
-    }
 
     public void RemoveCurrency(int i) {
         if (CurrencyManager.Instance.Currency >= 0) {

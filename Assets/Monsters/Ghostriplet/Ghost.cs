@@ -18,8 +18,8 @@ public class Ghost : MonoBehaviour
     public Sprite GhostBad;
 
     public int key; 
-    private int goodNum = 0;
-    private int bonus = 0; 
+    private int goodNum;
+    //int correct; 
     private bool NoOther; 
    
     //randomly cboose the good ghost 
@@ -30,28 +30,29 @@ public class Ghost : MonoBehaviour
 
     //detect a mouse click on one of the ghosts
     void OnMouseDown() {
-        
-        //goodNum = 1;
-        // print("clicked yay!!!" + goodNum);
-        
-        RevealClicked(); //show clicked ghost
         if (NoOther) 
         {
-            NoOther = false; 
+            // NoOther = false;
+            // if (correct > 4) {
+            //     print("all good ghosts now");
+            //     RevealAllGood(); 
+            //     CurrencyManager.Instance.Currency +=3;
+            // }
+             
+           
+            RevealClicked(); //show clicked ghost
             Invoke(nameof(RevealAll), 0.5f); //show all ghosts
-            print("clicked key:" + key);
-            print("gooodNum:" + goodNum);
             if (goodNum == key) 
             {
-                print("true");
-                //print("coins num " + (1 + bonus));
-                CurrencyManager.Instance.Currency += (1 + bonus);
-                bonus += 1;  
+                // correct ++; 
+                // print("correct added" + correct);
+                CurrencyManager.Instance.Currency += 5;
             }
-            else {
-                print("mismatch");
-                bonus = 0;
+            else 
+            {
+                CurrencyManager.Instance.Currency -= (1);
             }
+            
             Invoke(nameof(Refresh), 1.2f); //restart
         } 
         NoOther = true; 
@@ -97,6 +98,15 @@ public class Ghost : MonoBehaviour
         if (goodNum==2) { spriteRenderer2.sprite = GhostGood; }
     }
 
+    public void RevealAllGood() 
+    {
+        spriteRenderer0.sprite = GhostGood;
+        spriteRenderer1.sprite = GhostGood;
+        spriteRenderer2.sprite = GhostGood;
+    }
+
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -104,9 +114,11 @@ public class Ghost : MonoBehaviour
         spriteRenderer0.sprite = Ghost0;
         spriteRenderer1.sprite = Ghost1;
         spriteRenderer2.sprite = Ghost2;
-        bonus = 0;
+        print("Start is run");
+        //correct = 0;
         ChooseGoodNum();
         NoOther = true; 
+
     }
 }
 

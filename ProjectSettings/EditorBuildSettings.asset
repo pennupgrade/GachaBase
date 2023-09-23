@@ -65,4 +65,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Monsters/TimbBear/TimbBearScene.unity
     guid: e584fa9d8d49e7e4daf290d1775bf576
+  - enabled: 1
+    path: Assets/Monsters/Dasein/DaseinScene.unity
+    guid: 3ede927779d633345800a6477cd9c479
   m_configObjects: {}

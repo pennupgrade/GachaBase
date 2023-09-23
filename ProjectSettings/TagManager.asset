@@ -10,7 +10,10 @@ TagManager:
   - Coins
   - End
   - Obstacle
-  
+  - Dasein_Left
+  - Dasein_Right
+  - Dasein_Up
+  - Dasein_Down
   layers:
   - Default
   - TransparentFX
@@ -50,6 +53,7 @@ TagManager:
     locked: 0
   - name: DDR Arrows
     uniqueID: 1810663857
+    locked: 0
   - name: Background
     uniqueID: 3194329473
     locked: 0

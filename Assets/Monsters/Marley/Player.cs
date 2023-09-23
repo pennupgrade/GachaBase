@@ -3,39 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-using coins = CurrencyManager.Instance.Currency;
-using posX = transform.position.x;
-using posY = transform.position.y;
-
 // This Script controlls player input behavior
-public class Player : MonoBehaviour
-{
+public class Player : MonoBehaviour {
+
     /* 
     limitX: Halved horizontal limit from 0.
     limitY: Halved Vertical limit from 0.
     speed: Speed of the rocket.
     offset: Puts projectile forward.
     */
-    const float limitX, limitY, speed, offset;
-    limitY = 4.5f; 
-    limitX = 8f; 
-    speed = 3f;
-    offset = 0.8f;
+    const float limitX  = 8f;
+    const float limitY = 4.5f;
+    const float speed = 3f;
+    const float offset = 0.8f;
 
-    const
-
-    public GameObject projectile;
+    [SerializeField] private GameObject projectile;
 
     // Update is called once per frame
     void Update()
     {   
         playerMovement();
-        if (Input.GetMouseButtonDown || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
             spawnProjectile();
     }
 
     void spawnProjectile() {
-        Vector 3 vec = new Vector 3(posX + offset, posY, 0);
+        Vector3 vec = new Vector3(transform.position.x + offset, 
+                                  transform.position.y, 0);
         Instantiate(projectile, vec, Quaternion.identity);
     }
 
@@ -45,16 +39,16 @@ public class Player : MonoBehaviour
      */
     void playerMovement() {
         // UP
-        if (Input.GetKey(KeyCode.W) && posY <= limitY)
+        if (Input.GetKey(KeyCode.W) && transform.position.y <= limitY)
             transform.Translate(0, speed * Time.deltaTime, 0);
         // LEFT
-        if (Input.GetKey(KeyCode.A) && posX >= -limitX)
+        if (Input.GetKey(KeyCode.A) && transform.position.x >= -limitX)
             transform.Translate(- speed * Time.deltaTime, 0, 0);
         // DOWN
-        if (Input.GetKey(KeyCode.S) && posY >= -limitY)
+        if (Input.GetKey(KeyCode.S) && transform.position.y >= -limitY)
             transform.Translate(0, - speed * Time.deltaTime, 0);
         // RIGHT
-        if (Input.GetKey(KeyCode.D) && posX <= limitX)
+        if (Input.GetKey(KeyCode.D) && transform.position.x <= limitX)
             transform.Translate(speed * Time.deltaTime, 0, 0);        
     }
 
@@ -62,11 +56,20 @@ public class Player : MonoBehaviour
     Removes a Coin if an enemy is intercepted.
     Input: Collision container. Output: None.
      */
-    private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Enemy") lessCoin(); 
+    void OnCollisionEnter2D(Collision2D other) {
+        Debug.Log("Collision Player" + other.gameObject.name);
+        if (other.gameObject.tag == "Obstacle") RemoveCurrency(1); 
     }
 
     /* Currency Instance Handlers */
-    private void moreCoin() { coins++; }
-    private void lessCoin() { if (coins > 0) coins--; }
+
+    public void AddCurrency() {
+        CurrencyManager.Instance.Currency++;
+    }
+
+    public void RemoveCurrency(int i) {
+        if (CurrencyManager.Instance.Currency >= 0) {
+            CurrencyManager.Instance.Currency--;
+        }        
+    }
 }

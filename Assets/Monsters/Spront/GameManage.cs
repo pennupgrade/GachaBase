@@ -37,14 +37,15 @@ public class GameManage : MonoBehaviour
         int roundScore = (int)((finalPos.y - lineOfScrimmage.transform.position.y)/(5f*YARD_LENGTH));
         
         Debug.Log(roundScore);
-        addScore(roundScore); 
+        addScore(1+roundScore); 
     }
 
     public void addScore(int add){
-        score += add;
+        //generate currency
+        CurrencyManager.Instance.Currency += add;
     }
 
-    public void turnGameOn(){
+        public void turnGameOn(){
         if(gameOn) return;
 
         ball.GetComponent<ThrowBall>().movementEnabled = true;

@@ -8,6 +8,8 @@ public class Movement : MonoBehaviour
 
     public GameManage manager;
 
+    private bool coinsCollected = false;
+
     [HideInInspector]
     public bool movementEnabled = false, tackleable = false;
 
@@ -46,7 +48,9 @@ public class Movement : MonoBehaviour
     private void OnCollisionEnter(UnityEngine.Collision other) {
         if(!tackleable) return;
         if(enemyLayer == (enemyLayer | (1 << other.gameObject.layer))){
+            if(coinsCollected) return;
             Debug.Log("tackled");
+            coinsCollected = true;
             manager.calculateScore(transform.position);
             movementEnabled = false;
             other.gameObject.GetComponent<FollowPlayer>().movementEnabled = false;

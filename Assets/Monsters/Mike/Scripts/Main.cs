@@ -7,6 +7,10 @@ public class Main : MonoBehaviour
 
     Manager manager;
 
+    //
+    public GameObject mikePrefab;
+    public GameObject enemyPrefab;
+
     void Start()
     {
         UnityReferences.Initialize();
@@ -27,12 +31,14 @@ public class Main : MonoBehaviour
 public static class UnityReferences
 {
 
-    public static Transform Mike;
+    public static GameObject Mike;
+    public static GameObject Enemy;
     public static Camera Camera;
 
     public static void Initialize()
     {
-        Mike = GameObject.Find("Mike").GetComponent<Transform>();
+        var m = GameObject.Find("Main").GetComponent<Main>(); 
+            (Mike, Enemy) = (m.mikePrefab, m.enemyPrefab);
         Camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 
     }

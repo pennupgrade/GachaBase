@@ -14,16 +14,15 @@ public class Mike : AObject
     {
         mikes.Add(this);
         position = new();
-        mikeTransform = UnityReferences.Mike;
+        (mikeTransform = GameObject.Instantiate(UnityReferences.Mike).transform)
+            .localPosition = position.xyz();
     }
     
     float2 position;
     Transform mikeTransform;
 
-    public override void Draw()
-    {
-        mikeTransform.position = (Vector3)position.xyz(1f);
-    }
+    public override void DrawUpdate()
+        => mikeTransform.position = (Vector3)position.xyz(1f);
 
     float2 mouseToMike;
     bool grabbed;
@@ -31,7 +30,7 @@ public class Mike : AObject
     bool Check(float2 p)
         => CheckCollisionSpikeball(p, position, 8, math.sin(Time.timeSinceLevelLoad), .58f*5 * .4f);
 
-    public override void Update(InputData input)
+    public override void Update(InputData input, float dt)
     {
 
         bool hover = Check(input.mousePosition);

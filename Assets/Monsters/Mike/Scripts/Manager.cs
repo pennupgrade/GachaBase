@@ -11,13 +11,13 @@ public class Manager
     {
         input.Update();
         foreach (var obj in AObject.Objects)
-            obj.Update(input);
+            obj.Update(input, Time.deltaTime);
     }
 
     public void Draw()
     {
         foreach (var obj in AObject.Objects)
-            obj.Draw();
+            obj.DrawUpdate();
     }
 
 }
@@ -31,8 +31,8 @@ public abstract class AObject
     public AObject() => objects.Add(this);
 
     // quick system
-    public virtual void Draw() { }
-    public virtual void Update(InputData input) { }
+    public virtual void DrawUpdate() { }
+    public virtual void Update(InputData input, float dt) { }
     public virtual void CheckCollision() { } //this one is prolly gonna be static and stuff  
 
 }

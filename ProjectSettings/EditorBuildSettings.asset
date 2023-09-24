@@ -5,64 +5,67 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GachaScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/Turnip/TurnipPen.unity
     guid: 62058280ba2a4bd40825b0aa7edaaa45
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/Lenny/LennyScene.unity
     guid: ab8702fd63c9b12499e0d7086ad2bda8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/Ringus/RingusPen.unity
     guid: ec0b624f157f9614da36c891799c01c3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/Flint/level.unity
     guid: 538406057ad544443b1954b878d353a2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/Geoff/GeoffScene.unity
     guid: b0563ca375bc743d6a3225ed0629deb2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/Golem/GolemScene.unity
     guid: 22e609ada027e37478735883aadc5148
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/Duk/DukPen.unity
     guid: ed929ed24fc984ffb8fd90747ee70f82
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/Oren Ji/OrenJi.unity
     guid: bf4138e6c884ff24385068c7df31e581
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/Bingus/TestPenScene.unity
     guid: 141c33ba0c36bc64a9f449b41ccf4ef5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/MrOdee/MrOdee Scene.unity
     guid: 67f5107bd145d6f459f8493937ee253e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/Skates McGee/SkatesMcGeeScene.unity
     guid: 00d75c92bf3394749b4ca2c81987ea31
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/Typing Lion/TypingLionScene.unity
     guid: d0b2c7a7528e98d4e89a3dd91c5bffd6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/Boxee/BoxeePen (Scene).unity
     guid: a119a2d846d0d3646ba03c80c6ea16f9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/Vampyropoda/VampyropodaPen.unity
     guid: 4632df1c41b7fc54eb1a8237cdfe1402
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/DDR/DDRScene.unity
     guid: c030b0ae029269d4bbc2a845f92f725c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/DavidPumpkin/DavidPumpkin.unity
     guid: 946ba0fe9f78a4b7d9ad3260ad67516f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MenuScreen.unity
     guid: 302c87f8646137541ac70e53dcc155ae
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CreditScene.unity
     guid: 5ff068dbdd84a46308eae49bb3cf3159
-  - enabled: 1
+  - enabled: 0
     path: Assets/Monsters/TimbBear/TimbBearScene.unity
     guid: e584fa9d8d49e7e4daf290d1775bf576
+  - enabled: 1
+    path: Assets/Monsters/Marley/Space.unity
+    guid: 0ecdf7928e8beba4bbc345504c62bd3f
   m_configObjects: {}

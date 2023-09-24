@@ -18,13 +18,16 @@ public class Player : MonoBehaviour {
     const float offset = 0.8f;
 
     [SerializeField] private GameObject projectile;
+    [SerializeField] private AudioSource blaster;
 
     // Update is called once per frame
     void Update()
     {   
         playerMovement();
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) {
+            blaster.Play();
             spawnProjectile();
+        }            
     }
 
     void spawnProjectile() {

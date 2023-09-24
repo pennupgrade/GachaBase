@@ -45,7 +45,7 @@ public class Enemy : AObject, IEnemyCollider
     void Kill()
     {
         GameObject.Destroy(obj);
-        IEnemyCollider.enemyColliders.Remove(this); //enumeration problem whtaever
+        IEnemyCollider.delQueue.Add(this); //enumeration problem whtaever
         Destroy();
     }
 
@@ -61,8 +61,8 @@ public class Enemy : AObject, IEnemyCollider
         lo += step(PI, lo) * (TAU - 2f * lo);
 
         if (lo < mike.ShieldTheta.y * .5f)
-        { Kill(); God.Ins.Expand(); CurrencyManager.Instance.Currency += 2f; return false; }
-        Debug.Log(o);
+        { Kill(); new EnemyDie(p); God.Ins.Expand(); CurrencyManager.Instance.Currency += 2f; return false; }
+        //Debug.Log(o);
         //return false;
         return true;
   
@@ -77,6 +77,7 @@ public interface IEnemyCollider
 {
 
     public static List<IEnemyCollider> enemyColliders = new();
+    public static List<IEnemyCollider> delQueue = new();
     public bool CheckCollision(Mike mike);
 
 }

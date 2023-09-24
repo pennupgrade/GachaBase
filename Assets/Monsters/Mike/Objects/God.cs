@@ -45,7 +45,7 @@ public class God : AObject, IEnemyCollider
 
     void SpawnSpikeBall() //bad
     {
-        Debug.Log("spawning spike");
+        //Debug.Log("spawning spike");
 
         float2 p = float2(UnityEngine.Random.Range(-boxDim.x * .5f, boxDim.x * .5f), UnityEngine.Random.Range(-boxDim.y * .5f, boxDim.y * .5f));
         float2 dist = boxDim * .5f - abs(p);

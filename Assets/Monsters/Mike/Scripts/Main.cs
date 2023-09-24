@@ -11,6 +11,7 @@ public class Main : MonoBehaviour
     //
     public GameObject mikePrefab;
     public GameObject enemyPrefab;
+    public GameObject enemyDiePrefab;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public static class UnityReferences
 
     public static GameObject Mike;
     public static GameObject Enemy;
+    public static GameObject EnemyDie;
 
     public static Camera Camera;
 
@@ -43,7 +45,7 @@ public static class UnityReferences
     public static void Initialize()
     {
         var m = GameObject.Find("Main").GetComponent<Main>(); 
-            (Mike, Enemy) = (m.mikePrefab, m.enemyPrefab);
+            (Mike, Enemy, EnemyDie) = (m.mikePrefab, m.enemyPrefab, m.enemyDiePrefab);
 
         Camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 

@@ -14,16 +14,21 @@ public class Manager
 
     InputData input = new();
     public void Start()
-    { new God(); ElapsedTime = 0f; }
+    { enabled = true; new God(); ElapsedTime = 0f; }
 
     bool enabled = true;
     public void GameOver()
     {
-        Debug.Log("Game Over " + Manager.ElapsedTime);
+        //Debug.Log("Game Over " + Manager.ElapsedTime);
         enabled = false;
 
-        IEnumerator Coro() { yield return new WaitForSeconds(1f); End(); enabled = true; Start(); }
-        Main.Ins.StartCoroutine(Coro());
+        IEnumerator WaitRestart() 
+        { 
+            yield return new WaitForSeconds(1f); 
+            End(); Start(); 
+        }
+
+        Main.Ins.StartCoroutine(WaitRestart());
     }
 
     public void Loop()
@@ -45,6 +50,13 @@ public class Manager
                 if (e.CheckCollision(m)) { GameOver(); }
         }
 
+        if(IEnemyCollider.delQueue.Count != 0)
+        {
+            foreach (var e in IEnemyCollider.delQueue)
+                IEnemyCollider.enemyColliders.Remove(e);
+            IEnemyCollider.delQueue.Clear();
+        }
+        
         ElapsedTime += Time.deltaTime;
     }
 
@@ -65,10 +77,10 @@ public abstract class AObject
     public static void DoQueues()
     {
         if (objectQueue.Count != 0)
-            foreach (var o in objectQueue) objects.Add(o); objectQueue.Clear();
+        { foreach (var o in objectQueue) objects.Add(o); objectQueue.Clear(); }
 
-        if(delQueue.Count != 0)
-            foreach (var o in delQueue) objects.Remove(o); delQueue.Clear();
+        if (delQueue.Count != 0)
+        { foreach (var o in delQueue) objects.Remove(o); delQueue.Clear(); }
     }
 
     // quick system

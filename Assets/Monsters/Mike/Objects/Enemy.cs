@@ -33,6 +33,7 @@ public class Enemy : AObject, IEnemyCollider
         v += dt * a;
 
         cleanupTimer.Update(dt);
+        mm = input.mousePosition;
     }
 
     public override void DrawUpdate()
@@ -48,23 +49,27 @@ public class Enemy : AObject, IEnemyCollider
         Destroy();
     }
 
-    float R => 1.7f * 0.1f * 0.4f * 0.1f;
+    float R => 1.7f * 0.1f * 0.4f * 0.1f; float2 mm;
     public bool CheckCollision(Mike mike)
     {
-        Debug.Log(amod(mike.ShieldTheta.x, TAU) / PI);
+        //Debug.Log(amod(mike.ShieldTheta.x, TAU) / PI);
         if (!mike.Check(p, R)) return false;
 
         float o = atanP(p - mike.Position);
 
         float lo = amod(o - amod(mike.ShieldTheta.x, TAU), TAU);
         lo += step(PI, lo) * (TAU - 2f * lo);
-        
-        if (lo < mike.ShieldTheta.y * .5f)
-        { Kill(); God.Ins.Expand(); return false; }
 
+        if (lo < mike.ShieldTheta.y * .5f)
+        { Kill(); God.Ins.Expand(); CurrencyManager.Instance.Currency += 2f; return false; }
+        Debug.Log(o);
+        //return false;
         return true;
   
     }
+
+    public override void End()
+        => Kill();
 
 }
 

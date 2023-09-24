@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
 using System.Linq;
+using UnityEditor.SearchService;
+
+using UnityEngine.SceneManagement;
 
 public class Manager
 {
 
+    public static float ElapsedTime;
+
     InputData input = new();
     public void Start()
-        => new God();
+    { new God(); ElapsedTime = 0f; }
 
     bool enabled = true;
     public void GameOver()
     {
-        Debug.Log("Game Over " + Time.timeSinceLevelLoad);
+        Debug.Log("Game Over " + Manager.ElapsedTime);
         enabled = false;
+
+        IEnumerator Coro() { yield return new WaitForSeconds(1f); End(); enabled = true; Start(); }
+        Main.Ins.StartCoroutine(Coro());
     }
 
     public void Loop()
@@ -36,7 +44,12 @@ public class Manager
             foreach (var e in IEnemyCollider.enemyColliders)
                 if (e.CheckCollision(m)) { GameOver(); }
         }
+
+        ElapsedTime += Time.deltaTime;
     }
+
+    public void End()
+        => AObject.EndAll();
 
 }
 
@@ -66,6 +79,14 @@ public abstract class AObject
     static readonly List<AObject> delQueue = new();
     protected void Destroy() => delQueue.Add(this);
 
+    public static void EndAll()
+    {
+        foreach (var obj in objects)
+            obj.End();
+        objects.Clear();
+    }
+    public virtual void End() { }
+
 }
 
 public struct InputData
@@ -81,6 +102,8 @@ public struct InputData
     public bool rmbp;
     public bool rmbu;
 
+    public bool space;
+
     public void Update()
     {
         lmb = Input.GetMouseButton(0);
@@ -90,6 +113,8 @@ public struct InputData
         rmb = Input.GetMouseButton(1);
         rmbp = Input.GetMouseButtonDown(1);
         rmbu = Input.GetMouseButtonUp(1);
+
+        space = Input.GetKeyDown(KeyCode.Space);
 
         mousePosition = UnityReferences.Camera.ScreenToWorldPoint(Input.mousePosition).xy();
     }

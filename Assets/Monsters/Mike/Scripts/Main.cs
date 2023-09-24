@@ -5,6 +5,7 @@ using UnityEngine;
 public class Main : MonoBehaviour
 {
 
+    public static Main Ins;
     Manager manager;
 
     //
@@ -13,6 +14,8 @@ public class Main : MonoBehaviour
 
     void Start()
     {
+        Ins = this;
+
         Shader.SetGlobalFloat("aspect", 16f / 9f);
 
         UnityReferences.Initialize();

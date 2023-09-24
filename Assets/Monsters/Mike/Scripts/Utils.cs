@@ -29,7 +29,7 @@ public static class Utils
     public static float amod(float f, float m)
     {
         float s = fmod(abs(f), m);
-        return s + step(s, 0f) * (m - 2f * s);
+        return s + step(f, 0f) * (m - 2f * s);
     }
 
     public static float pows(float f, float p)

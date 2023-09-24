@@ -19,19 +19,19 @@ public class God : AObject, IEnemyCollider
 
         IEnemyCollider.enemyColliders.Add(this);
 
-        new Mike(); new Mike();
+        new Mike();
         timer = new(2f, SpawnSpikeBall); SpawnSpikeBall();
     }
 
     float wallSize = -0.2f;
-    float wallExpandV = 0f; float wallExpandA = -2.0f; public void Expand() => wallExpandV = 1f;
+    float wallExpandV = 0f; float wallExpandA = -2.0f; public void Expand() => wallExpandV = .89f*1f;
     public override void Update(InputData input, float dt)
     {
         //wallSize = 0.1f + sin(Time.timeSinceLevelLoad*0.1f*10f) * .2f;
         timer.Update(dt);
-        timer.ChangeMaxTime(-0.01f * dt * exp(pow(Time.timeSinceLevelLoad*0.1f, 2.0f)));
+        timer.ChangeMaxTime(-0.04f * dt * exp(-pow(Manager.ElapsedTime*0.05f, 2.0f)));
 
-        wallSize += (0.04f * (0.5f + 1f-exp(-Time.timeSinceLevelLoad*0.05f))) * dt;
+        wallSize += (0.04f * (0.5f + 1.3f*(1f-exp(-Manager.ElapsedTime* 0.05f)))) * dt;
         wallSize -= wallExpandV * dt; wallExpandV = max(0f, wallExpandV + wallExpandA * dt);
         wallSize = max(-0.2f, wallSize);
     }

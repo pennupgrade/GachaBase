@@ -37,7 +37,7 @@ public class Mike : AObject
 
     public float R => .58f * 4 * .4f;
     public bool Check(float2 p, float r = 0f)
-        => CheckCollisionSpikeball(p, r, position, 8, math.sin(Time.timeSinceLevelLoad), R);
+        => CheckCollisionSpikeball(p, r, position, 8, math.sin(Manager.ElapsedTime), R);
 
     public override void Update(InputData input, float dt)
     {
@@ -50,11 +50,18 @@ public class Mike : AObject
         if (grabbed)
             position = input.mousePosition + mouseToMike;
 
-        ShieldTheta.x += (input.rmb ? 3f : 0.5f) * dt;
+        ShieldTheta.x += (input.rmb || input.space ? 3f : 0.5f) * dt;
 
     }
 
     //public float2 ShieldTheta => new float2(1.2f * Time.timeSinceLevelLoad + 10f + math.sin(Time.timeSinceLevelLoad), 1.1f*1.5f*1.5f*1f * 1.5f);
-    public float2 ShieldTheta = new float2(0f, 1.1f * 1.5f * 1.5f * 1f * 1.5f);
+    public float2 ShieldTheta = new float2(0f, /*1.1f * 1.5f * 1.5f **/ 1.2f*1f * 1.5f);
+
+    public override void End()
+    {
+        mikes.Clear();
+        GameObject.Destroy(mikeTransform.gameObject);
+    }
+    
 
 }

@@ -2,6 +2,7 @@ Shader "Unlit/MikeGame/Mike"
 {
     Properties
     {
+        _ShieldRotation ("Shield Rotation", Float) = 0.
     }
     SubShader
     {
@@ -44,6 +45,7 @@ Shader "Unlit/MikeGame/Mike"
             }
 
             float aspect;
+            float _ShieldRotation;
 
             fixed4 frag (vOut i) : SV_Target
             {

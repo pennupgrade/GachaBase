@@ -6,7 +6,7 @@ using static Unity.Mathematics.math;
 public static class Utils
 {
 
-    const float TAU = Mathf.PI * 2f;
+    public const float TAU = Mathf.PI * 2f;
 
     public static Mesh QuadMesh = new ()
     {
@@ -32,6 +32,9 @@ public static class Utils
         return s + step(s, 0f) * (m - 2f * s);
     }
 
+    public static float pows(float f, float p)
+        => sign(p) * pow(abs(f), p);
+
     public static float atanP(float2 p)
         => amod(atan2(p.y, p.x), TAU);
 
@@ -42,7 +45,7 @@ public static class Utils
         => p.x * float2(cos(p.y), sin(p.y));
 
     //can be changed to return pos can use distance and get the perp to closest point and use that ig
-    public static bool CheckCollisionSpikeball(float2 p, float2 shapePos, int sideCount, float rotOffset, float r)
+    public static bool CheckCollisionSpikeball(float2 p, float pR, float2 shapePos, int sideCount, float rotOffset, float r)
     {
         p = p - shapePos;
 
@@ -61,10 +64,13 @@ public static class Utils
         lp -= sp;
         lp = float2(dot(lp, dir), dot(lp, up));
 
-        return lp.y < 0;
+        return lp.y - pR < 0;
     }
 
     public static float3 xyz(this float2 v, float z = 0f) => float3(v.x, v.y, z);
     public static float2 xy(this Vector3 v) => float2(v.x, v.y);
+    public static float2 xy(this float3 v) => float2(v.x, v.y);
+
+    public static float vmin(float2 v) => min(v.x, v.y);
 
 }

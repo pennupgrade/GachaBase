@@ -2,6 +2,7 @@ Shader "Unlit/MikeGame/MikeSprite"
 {
     Properties
     {
+        _ShieldRotation ("Shield Rotation", Float) = 0.
     }
     SubShader
     {
@@ -43,9 +44,12 @@ Shader "Unlit/MikeGame/MikeSprite"
                 return o;
             }
 
+            float _ShieldRotation;
+
             fixed4 frag (vOut i) : SV_Target
             {
-                return render(i.uv*2.-1.);
+                //_ShieldRotation = 0.;
+                return render(i.uv*2.-1., _ShieldRotation);
 
             }
             ENDCG

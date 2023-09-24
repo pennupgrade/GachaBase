@@ -101,7 +101,7 @@ Shader "Unlit/MikeGame/SpikeWall"
                 float exists = 0.;
 
                 // temp, will be controlled cpu later
-                _Encroach = .2 + .05* _Time.y; //.5
+                _Encroach *= 2.;//_Encroach = .2 + .05* _Time.y; //.5
 
                 //
                 float t = _Time.y*.004*50.;

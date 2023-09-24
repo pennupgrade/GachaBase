@@ -153,7 +153,7 @@ float dEyes(float2 p) //generaliez for the outline, param for distorting p
 
 float2 ffloat2(float p) {return float2(p, p);}
 
-float4 render(float2 uv)
+float4 render(float2 uv, float o)
 {
 
     highlightAllow = 1.;
@@ -172,7 +172,7 @@ float4 render(float2 uv)
     p = rot(p, sin(_Time.y));
     float dHex = sdSpikeball(p, 8, ffloat2(.4), thickMult*.02, 0.);
     float dInner = sdSpikeball(p, 8, ffloat2(.3), thickMult*.02, 0.); dInner = opI(dInner, sdMultiAngledLines(p, 3., 1., 4.4*_Time.y));
-    float dOuter = sdSpikeball(p, 8, ffloat2(.5), thickMult*.02, 0.); dOuter = opI(dOuter, sdAngledLines(p, (.7+.5)*_Time.y+10., 1.));
+    float dOuter = sdSpikeball(p, 8, ffloat2(.5), thickMult*.02, 0.); dOuter = opI(dOuter, sdAngledLines(p, o - sin(_Time.y)/*1.2*_Time.y+10.*/, 1.5*1.));
     float dAlpha = sdSpikeball(p, 8, ffloat2(.53), .0, 0.);
     
     //

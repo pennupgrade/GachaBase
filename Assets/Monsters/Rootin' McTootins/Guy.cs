@@ -19,7 +19,7 @@ public class Guy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Space)) && (Draw.state == 2)) {
+        if ((Input.GetKeyDown(KeyCode.Space)) && (Draw.state == 1)) {
             spriteRenderer.sprite = ShootingRight;
         }
         if (Draw.state == 3) {

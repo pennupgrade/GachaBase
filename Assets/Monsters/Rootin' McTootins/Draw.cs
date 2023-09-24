@@ -32,7 +32,7 @@ public class Draw : MonoBehaviour
     {
         timer = timer + 1;
 
-        if (timer == drawTime) {
+        if ((timer == drawTime) && (!end)) {
             spriteRenderer.sprite = TextD;
             draw = true;
             state = 1;
@@ -72,7 +72,7 @@ public class Draw : MonoBehaviour
         draw = false;
         end = false;
         drawTime = Random.Range(300, 1000);
-        enemyReflex = drawTime + Random.Range(30, 80);
+        enemyReflex = drawTime + Random.Range(50, 100);
         spriteRenderer.sprite = TextR;
         state = 0;
     }

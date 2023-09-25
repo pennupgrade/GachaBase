@@ -13,8 +13,7 @@ public class CoinController : MonoBehaviour
     void Start()
     {
         coinCount = 10;
-        coinText = coinTextMesh.GetComponent<TextMeshPro>();
-        coinText.SetText(coinCount.ToString());
+        //coinText = coinTextMesh.GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame

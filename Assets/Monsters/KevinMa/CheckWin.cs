@@ -5,19 +5,12 @@ using UnityEngine.UI;
 
 public class CheckWin : MonoBehaviour
 {
-    private Button btn;
-    [SerializeField] private GameObject item1;
-    [SerializeField] private GameObject item2;
-    [SerializeField] private GameObject item3;
-    int index1;
-    int index2;
-    int index3;
+    private GameObject group;
 
     // Start is called before the first frame update
     void Start()
     {
-        Button btn = this.GetComponent<Button>();
-        btn.onClick.AddListener(DoOnClick);
+        group = GameObject.Find("Items");
     }
 
     // Update is called once per frame
@@ -26,12 +19,19 @@ public class CheckWin : MonoBehaviour
         
     }
 
-    void DoOnClick(){
-		Debug.Log ("You have clicked the button!");
-        index1 = item1.GetComponent<ChangeSprite>().Change();
-        index2 = item2.GetComponent<ChangeSprite>().Change();
-        index3 = item3.GetComponent<ChangeSprite>().Change();
-        Debug.Log (index1 + " " + index2 + " " + index3);
+    public void RollOnce() {
+		Debug.Log ("Roll once");
+        GameObject item = group.transform.GetChild(0).gameObject;
+        item.GetComponent<ChangeSprite>().Change();
+        
+	}
+
+    public void RollTen() {
+		Debug.Log ("Roll 10 times");
+        for (int i = 0; i < 10; i++) {
+            GameObject item = group.transform.GetChild(i).gameObject;
+            item.GetComponent<ChangeSprite>().Change();
+        }
 	}
 
 }

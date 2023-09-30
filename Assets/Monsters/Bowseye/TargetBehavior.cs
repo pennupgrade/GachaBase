@@ -7,16 +7,15 @@ public class TargetBehavior : MonoBehaviour
     int timer;
     bool clicked;
     int maxTime;
-    int score;
+    bool gameOver;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("hi");
         timer = 0;
         clicked = false;
         maxTime = 200;
-        score = 0;
+        gameOver = false;
         Spawn();
     }
 
@@ -24,23 +23,27 @@ public class TargetBehavior : MonoBehaviour
     void Update()
     {
         timer++;
-        if (timer >= maxTime || clicked) {
-            if (!clicked) {
-                missed += 1;
-            }
+        if (maxTime > 0 && (timer >= maxTime || clicked)) {
             Spawn();
             timer = 0;
             clicked = false;
             maxTime -= 5;
             Debug.Log("maxTime" + maxTime);
+        } else if (maxTime <= 0) {
+            gameOver = true;
+            Application.Quit();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
         }
     }
 
     void OnMouseDown() {
         Debug.Log("target clicked");
         clicked = true;
-        score += 1;
-        Debug.Log(score);
+        if (!gameOver) {
+            CurrencyManager.Instance.Currency += 1;
+        }
     }
 
     void Spawn()

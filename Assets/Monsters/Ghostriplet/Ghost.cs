@@ -16,12 +16,12 @@ public class Ghost : MonoBehaviour
 
     public Sprite GhostGood;
     public Sprite GhostBad;
+    public Sprite GhostRainbow;
 
     public int key; 
     private int goodNum;
-    //int correct; 
     private bool NoOther; 
-   
+    public static int level; 
     //randomly cboose the good ghost 
     void ChooseGoodNum()
     {
@@ -32,26 +32,33 @@ public class Ghost : MonoBehaviour
     void OnMouseDown() {
         if (NoOther) 
         {
-            // NoOther = false;
-            // if (correct > 4) {
-            //     print("all good ghosts now");
-            //     RevealAllGood(); 
-            //     CurrencyManager.Instance.Currency +=3;
-            // }
+            print("clicked!"); 
+            NoOther = false;
+            if (level > 4) {
+                print("all rainbow now");
+                RevealAllRainbow(); 
+                CurrencyManager.Instance.Currency +=3;
+            }
              
-           
-            RevealClicked(); //show clicked ghost
-            Invoke(nameof(RevealAll), 0.5f); //show all ghosts
-            if (goodNum == key) 
-            {
-                // correct ++; 
-                // print("correct added" + correct);
-                CurrencyManager.Instance.Currency += 5;
+            else {
+                RevealClicked(); //show clicked ghost
+                Invoke(nameof(RevealAll), 0.5f); //show all ghosts
+                if (goodNum == key) 
+                {
+                    print("guessed right!");
+                    // correct ++; 
+                    // print("correct added" + correct);
+                    level = level+1;
+                    print("level " + level);
+                    CurrencyManager.Instance.Currency += 5;
+                }
+                else 
+                {
+                    print("guessed wrong!");
+                    CurrencyManager.Instance.Currency -= (1);
+                }
             }
-            else 
-            {
-                CurrencyManager.Instance.Currency -= (1);
-            }
+            
             
             Invoke(nameof(Refresh), 1.2f); //restart
         } 
@@ -64,7 +71,6 @@ public class Ghost : MonoBehaviour
         spriteRenderer1.sprite = Ghost1;
         spriteRenderer2.sprite = Ghost2;
         ChooseGoodNum(); 
-        
         // print("new game");
     }
 
@@ -89,6 +95,9 @@ public class Ghost : MonoBehaviour
 
     public void RevealAll() 
     {
+        // spriteRenderer0.sprite = GhostRainbow;
+        // spriteRenderer1.sprite = GhostRainbow;
+        // spriteRenderer2.sprite = GhostRainbow;
         spriteRenderer0.sprite = GhostBad;
         spriteRenderer1.sprite = GhostBad;
         spriteRenderer2.sprite = GhostBad;
@@ -98,11 +107,14 @@ public class Ghost : MonoBehaviour
         if (goodNum==2) { spriteRenderer2.sprite = GhostGood; }
     }
 
-    public void RevealAllGood() 
+    public void RevealAllRainbow() 
     {
-        spriteRenderer0.sprite = GhostGood;
-        spriteRenderer1.sprite = GhostGood;
-        spriteRenderer2.sprite = GhostGood;
+        spriteRenderer0.sprite = GhostRainbow;
+        spriteRenderer1.sprite = GhostRainbow;
+        spriteRenderer2.sprite = GhostRainbow;
+        // spriteRenderer0.sprite = GhostGood;
+        // spriteRenderer1.sprite = GhostGood;
+        // spriteRenderer2.sprite = GhostGood;
     }
 
     
@@ -118,6 +130,7 @@ public class Ghost : MonoBehaviour
         //correct = 0;
         ChooseGoodNum();
         NoOther = true; 
+        level = 0;
 
     }
 }

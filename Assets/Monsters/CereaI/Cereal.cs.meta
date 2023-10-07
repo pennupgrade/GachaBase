@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e2842a8cec70ddf46a9560ae12097608
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Knead1: {fileID: 21300000, guid: 7a6a75622d035e84bbcf1035589fa984, type: 3}
+  - Knead2: {fileID: 21300000, guid: dbf7051519132bb408983f2e1d07d4f1, type: 3}
+  - Knead3: {fileID: 21300000, guid: a9c2bea413f3a3e48889e45a3e6b023d, type: 3}
+  - Knead4: {fileID: 21300000, guid: 79c0e5f3038a4e64cb11b97733da1875, type: 3}
+  - Biscuit: {fileID: 21300000, guid: c69b4b77ee064e842826ae9d37b7fbd6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

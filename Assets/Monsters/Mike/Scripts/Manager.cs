@@ -61,7 +61,7 @@ public class Manager
     }
 
     public void End()
-        => AObject.EndAll();
+    { AObject.EndAll(); IEnemyCollider.enemyColliders.Clear(); }
 
 }
 

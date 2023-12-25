@@ -31,7 +31,7 @@ public class God : AObject, IEnemyCollider
         timer.Update(dt);
         timer.ChangeMaxTime(-0.04f * dt * exp(-pow(Manager.ElapsedTime*0.05f, 2.0f)));
 
-        wallSize += (0.04f * (0.5f + 1.3f*(1f-exp(-Manager.ElapsedTime* 0.05f)))) * dt;
+        wallSize += 0.04f * (0.5f + 1.3f*(1f-exp(-Manager.ElapsedTime* 0.05f))) * dt;
         wallSize -= wallExpandV * dt; wallExpandV = max(0f, wallExpandV + wallExpandA * dt);
         wallSize = max(-0.2f, wallSize);
     }

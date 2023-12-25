@@ -3,7 +3,6 @@
 #define IPI .3183099
 #define eps float2(0.00001, 0.)
 #define V float2(1., 0.)
-//#define e 2.718282﻿
 
 float fract(float v)
 {
@@ -324,6 +323,18 @@ float sdSpikeBall(float2 r, float partitions, float2 p, float variation, float s
 	float2 radii = float2(sRa, eRa) + variationOut;// float2(variation * hash11(sid), variation * hash11(eid));
 	return sdPolarLine(radii, 2. * PI / partitions, polar.x * float2(sin(ltheta), cos(ltheta)));
 }
+/*
+float sdAngledLines(float2 p, float startTheta, float thetaWidth)
+{
+	float2 polar = toPolar(p);
+	float rTheta = polar.y - startTheta;
+
+	rTheta = PI-abs(rTheta-PI);
+	rTheta = abs(rTheta);
+	rTheta -= thetaWidth*.5;
+
+	return rTheta*polar.x;
+}*/
 
 //Higher level stuff (insert here)
 float noisySin(float t, float seed)

@@ -19,7 +19,8 @@ public class ScrollScript : MonoBehaviour
     void Update()
     {
         Vector3 curPos = gameObject.transform.position;
-        curPos = new Vector3(curPos.x, curPos.y + scrollSpeed, curPos.z);
+
+        curPos.y = curPos.y + scrollSpeed * Time.deltaTime;
 
         if (curPos.y > 25.0)
         {

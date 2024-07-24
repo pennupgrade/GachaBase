@@ -19,12 +19,11 @@ MonoBehaviour:
   description: 'Team Name: Bucket Hat
 
 
-    Description: David Pumpkin will randomly
-    generate one of three types of coins to be thrown in any direction across the
-    scene. The three coins that the player can click are either a stack of gacha
-    currency, a single gacha currency, or a ghost coin, which makes the player lose
-    currency.
+    Description: David Pumpkin will throw
+    out three different coin types in random directions. Clicking on a stack gives
+    you many money, a single currency gives you one coin, and a ghost coin, makes
+    you lose coins, so avoid that!
 
 
-    Backstory: David Pumpkin: Travelling sentient merchant cat. Made
-    of the nightmares of pumpkins everywhere. '
+    Backstory: David Pumpkin is a travelling
+    sentient merchant cat. Made of the nightmares of pumpkins everywhere. '

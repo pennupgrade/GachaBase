@@ -15,3 +15,13 @@ MonoBehaviour:
   monsterName: Turnip
   sceneName: TurnipPen
   iconSprite: {fileID: 21300000, guid: 0bfb4341194d54540852d4f4a2a08f87, type: 3}
+  transparentSprite: {fileID: 0}
+  description: 'Team Name: UPGRADE
+
+
+    Description: Press the arrow keys in the
+    direction of the leaf to earn money !!!
+
+
+    Backstory: Its stem is really thin
+    for a turnip. Don''t make fun of it.'

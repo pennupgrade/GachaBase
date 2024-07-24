@@ -17,5 +17,6 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: 928ac0e6fe91536449ae4437064778ca, type: 3}
   transparentSprite: {fileID: 21300000, guid: e5232987d8474ca418b0bead68cdae5b, type: 3}
   description: "Team Name : (\u0E07\u2022\u0300\u1D17\u2022\u0301)\u0E07\n\nDescription:
-    A very aggressive plant.\nMove them with arrow keys to win [[$$PR1ZE$$]]\n\nBackstory:
-    Boxee\u2019s aggression stems from his very aggressively Western cowboy hat."
+    A very aggressive plant. Move around with arrows keys and collect the coins to...
+    get coins.\n\nBackstory: Boxee\u2019s aggression stems from his very aggressively
+    Western cowboy hat~"

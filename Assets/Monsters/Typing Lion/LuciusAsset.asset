@@ -17,7 +17,7 @@ MonoBehaviour:
   iconSprite: {fileID: 21300000, guid: f254e05254f11f243a96fcd6150da577, type: 3}
   transparentSprite: {fileID: 21300000, guid: 8881478dee543b641b1bb646e4026984, type: 3}
   description: "Team Name: Lucent Lions\n\nDescription: Lucius is a wise lion who
-    loves books.\nHis vast knowledge of grammar and spelling earned him the nickname
-    \u201CLexicon\u201D.\nHe\u2019ll be testing your typing skills, so prove to him
+    loves books. His vast knowledge of grammar and spelling earned him the nickname
+    \u201CLexicon\u201D. He\u2019ll be testing your typing skills, so prove to him
     that you\u2019re a word wiz!\n\nBackstory: Lucius the \u201CLexicon\u201D Lion
-    has a wpm of 317. Can you beat that? :) "
+    has a WPM of 317. Can you beat that? :) "

@@ -16,7 +16,8 @@ MonoBehaviour:
   sceneName: SkatesMcGeeScene
   iconSprite: {fileID: 21300000, guid: d7a37723d0c4b47619cc11c74274e695, type: 3}
   transparentSprite: {fileID: 21300000, guid: 156b09fa4b4f3d347a87d58c79b5405c, type: 3}
-  description: "Team Name: LSD\n\nDescription: He does a little skating. Move left
-    and right with the A and D keys to dodge the incoming energy balls!\n\nBackstory:
-    The name LSD comes from the original team members\u2019 names, but the L person
-    never actually showed up to a meeting :("
+  description: "Team Name: LSD\n\nDescription: Move left and right with the A and
+    D keys to dodge the incoming energy balls! The longer you survive, the more coins
+    you get.\n\nBackstory: He does a little skating. The name LSD comes from the
+    original team members\u2019 names, but the L person never actually showed up
+    to a meeting :("

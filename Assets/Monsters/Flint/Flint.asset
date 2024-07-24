@@ -19,12 +19,10 @@ MonoBehaviour:
   description: 'Team Name: Ethereal Spork
 
 
-    Description: A one-armed floating
-    rock.
-
-    Use WASD and Space to navigate an obstacle course for money!
+    Description: Use WASD and the spacebar
+    to navigate an obstacle course. Collect the coins!
 
 
-    Backstory:
-    Flint lost one of his arms in an intoxicated duel with his nemesis, a giant sewer
-    rat.'
+    Backstory: Flint is
+    a one-armed floating rock. He lost one of his arms in an intoxicated duel with
+    his nemesis, a giant sewer rat.'

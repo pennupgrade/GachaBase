@@ -16,9 +16,9 @@ MonoBehaviour:
   sceneName: GeoffScene
   iconSprite: {fileID: 21300000, guid: dca6c47e1efd24c4b96a038ee47b3a50, type: 3}
   transparentSprite: {fileID: 21300000, guid: 3cb73bbd9250dca4a9f7094d9da67c2b, type: 3}
-  description: "Team Name: AmongEYE\n\nDescription: Geoff is a perfectly normal critter,
-    but he has big dreams. Collect enough coins to help Geoff grow big and strong!\nSimply
-    click on Geoff to make him generate coins. Raising Geoff is a tough task, but
-    with your help, he can really\u2026\ncome out of his shell.\n\nBackstory: The
-    design was originally based on Kha\u2019zix from League of Legends, but eventually
-    it became pokemon and hollow knight inspired."
+  description: "Team Name: AmongEYE\n\nDescription: Collect enough coins to help
+    Geoff grow big and strong! Simply click on Geoff to make him generate coins.
+    Raising Geoff is a tough task, but with your help, he can really\u2026 come out
+    of his shell.\n\nBackstory: Geoff is a perfectly normal critter, but he has big
+    dreams. The design was originally based on Kha\u2019zix from League of Legends,
+    but eventually it became Pok\xE9mon and Hollow Knight inspired."

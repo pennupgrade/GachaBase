@@ -16,8 +16,9 @@ MonoBehaviour:
   sceneName: MrOdee Scene
   iconSprite: {fileID: 21300000, guid: f0c17680095bb084db1e7b9ae5e7049a, type: 3}
   transparentSprite: {fileID: 21300000, guid: 379c7059249ec124d8a00758c25e8f02, type: 3}
-  description: "Team Name: Team Leaf \U0001F331\n\nDescription: Hailing from the
-    Fertile Crescent, Mr. Odee needs the nourishment of your currency to grow!\nClick
-    on him enough times to make him grow into a mature oat plant, then enjoy the
-    payoff for a limited amount of time!\n\nBackstory: Mr. Odee\u2019s animation
-    was inspired by the hula hooping motions of plant gifs."
+  description: "Team Name: Team Leaf\n\nDescription: Click on Mr. Odee enough times
+    to make him grow into a mature oat plant, then enjoy the payoff for a limited
+    amount of time! Clicking on him when he's not mature will make you lose coins!\n\nBackstory:
+    Hailing from the Fertile Crescent, Mr. Odee needs the nourishment of your currency
+    to grow! Mr. Odee\u2019s animation was inspired by the hula hooping motions of
+    plant gifs."

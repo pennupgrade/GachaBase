@@ -16,7 +16,8 @@ MonoBehaviour:
   sceneName: DDRScene
   iconSprite: {fileID: 21300000, guid: deecc8f1e22755a4ea69afbcbea3ab1d, type: 3}
   transparentSprite: {fileID: 21300000, guid: 8028d78a9fecdd34ab88da16b6b9e7b8, type: 3}
-  description: "Team Name: Dragon Dance Revolution\n\nDescription: Pyro is a young
-    dragon whose dream is to become a great performer in the dragon circus. Help
-    him polish his moves!\n\nBackstory: Pyro is actually Spyro the Dragon\u2019s
-    dad."
+  description: "Team Name: Dragon Dance Revolution\n\nDescription: If you know Friday
+    Night Funkin', you know how to play this game. Hit the correct arrow key at the
+    right time! Accurate hits give you a coin, and misses lose you one coin.\n\nBackstory:
+    Pyro is a young dragon whose dream is to become a great performer in the dragon
+    circus. Help him polish his moves! Pyro is actually Spyro the Dragon\u2019s dad."

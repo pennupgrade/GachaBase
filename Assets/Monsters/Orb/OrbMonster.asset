@@ -16,7 +16,15 @@ MonoBehaviour:
   sceneName: OrbScene
   iconSprite: {fileID: 21300000, guid: b8a38e8fd04714f9b9ccd09a2a9fe030, type: 3}
   transparentSprite: {fileID: 21300000, guid: f4915f10aeb91428a82e2c8f66daea63, type: 3}
-  description: It is a mysterious ancient artefact that can turn certain other materials
-    into gold. Upon closer inspection, one can see that this orb is in fact alive.
-    From time to time, one may catch it spinning or bouncing around on its own, in
-    an effort to find more materials to turn...
+  description: 'Team Name: shake-shack
+
+
+    Description: Click in the labeled area
+    to release a ball. Strategically release it so it falls into one of the slots,
+    which will earn you a coin.
+
+
+    Backstory: It is a mysterious ancient artefact
+    that can turn certain other materials into gold. Upon closer inspection, one
+    can see that this orb is in fact alive. From time to time, one may catch it spinning
+    or bouncing around on its own, in an effort to find more materials to turn...'

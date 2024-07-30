@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +7,12 @@ public class MenuScript : MonoBehaviour
 
     public void StartGame()
     {
+        if (MainManager.Instance != null)
+        {
+            MainManager.Instance.CanvasGameObject.SetActive(true);
+            MainManager.Instance.EventSystemGameObject.SetActive(true);
+        }
+        
         SceneManager.LoadScene("GachaScene");
     }
 
@@ -24,6 +28,9 @@ public class MenuScript : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        MainManager.Instance.CanvasGameObject.SetActive(false);
+        MainManager.Instance.EventSystemGameObject.SetActive(false);
+        
         SceneManager.LoadScene("MenuScreen");
     }
 

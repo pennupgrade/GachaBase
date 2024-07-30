@@ -534,6 +534,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backButton: {fileID: 874812851530863630}
+  CanvasGameObject: {fileID: 7039540017572085042}
+  EventSystemGameObject: {fileID: 3779170759492046443}
 --- !u!1 &5959830358872311644
 GameObject:
   m_ObjectHideFlags: 0

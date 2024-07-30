@@ -405,6 +405,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1e799e54ba0f54e5bb9580b82650ae02, type: 2}
   - {fileID: 11400000, guid: d0de7f6c1fbc2ea4791a30c116a5bf65, type: 2}
   - {fileID: 11400000, guid: 0bb461e9f2fd54114a48c70136006c17, type: 2}
+  - {fileID: 11400000, guid: 1b74033f2b0274be29243d5b68ea22fa, type: 2}
   - {fileID: 11400000, guid: c8b578430825b44d89d482f31227b8b3, type: 2}
   - {fileID: 11400000, guid: da1b4ab323ed29b4bae06d885b44096e, type: 2}
   - {fileID: 11400000, guid: 35ab474a133b7dc4084deffc93f65a3b, type: 2}
@@ -730,7 +731,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 54
   m_TargetDisplay: 0
 --- !u!114 &384305510966882577
 MonoBehaviour:

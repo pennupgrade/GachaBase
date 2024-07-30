@@ -1,20 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class GachaChest : MonoBehaviour
 {
 
     private int numOfMonsters;
-
-
+    
     [SerializeField]
     private Button cardButton;
 
     [SerializeField]
     private Image cardImage;
+
+    [SerializeField] private Image overlayImage;
 
     [SerializeField]
     private int ROLL_COST;
@@ -151,11 +149,16 @@ public class GachaChest : MonoBehaviour
         
         cardButton.GetComponent<CanvasGroup>().alpha = 1;
         cardButton.GetComponent<CanvasGroup>().interactable = true;
+
+        overlayImage.enabled = true;
     }
+    
     public void HideCard() {
         cardImage.enabled = false;
         cardButton.GetComponent<CanvasGroup>().alpha = 0;
         cardButton.GetComponent<CanvasGroup>().interactable = false;
+
+        overlayImage.enabled = false;
     }
 
     private void OnMouseOver()

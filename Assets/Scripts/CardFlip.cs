@@ -58,9 +58,6 @@ public class CardFlip : MonoBehaviour
         float elapsedTime = 0f;
         Vector3 fromScale = fromImage.transform.localScale;
         Vector3 toScale = new Vector3(0, fromImage.transform.localScale.y, fromImage.transform.localScale.z);
-        
-        Debug.Log("from scale: " + fromScale);
-        Debug.Log("to scale: " + toScale);
 
         // First half of the flip
         while (elapsedTime < flipDuration / 2)

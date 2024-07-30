@@ -71,8 +71,7 @@ public class CardFlip : MonoBehaviour
         toImage.gameObject.SetActive(true);
 
         elapsedTime = 0f;
-        fromScale = toImage.transform.localScale;
-        toScale = new Vector3(0.49f, toImage.transform.localScale.y, toImage.transform.localScale.z);
+        toScale = new Vector3(1.8f, toImage.transform.localScale.y, toImage.transform.localScale.z);
 
         // Second half of the flip
         while (elapsedTime < flipDuration / 2)

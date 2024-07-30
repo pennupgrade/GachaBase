@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CurrencyManager : MonoBehaviour
 {
 
     private static CurrencyManager instance;
     public static CurrencyManager Instance => CurrencyManager.instance;
+    
     // Start is called before the first frame update
     void Start()
     {   
-        GetComponent<Text>().text = currency.ToString();
+        GetComponent<TMP_Text>().text = currency.ToString();
     }
 
     [SerializeField]
@@ -20,20 +20,11 @@ public class CurrencyManager : MonoBehaviour
         get { return currency; }
         set { SetCurrency(value); }
     }
+    
     public void SetCurrency(float f)
     {
         currency = Mathf.Max(0,f);
-        GetComponent<Text>().text = currency.ToString();
-        //GetComponent<Text>().text = currency.ToString();
-    }
-    public void AddCurrency(float f)
-    {
-        SetCurrency(currency - f);
-    }
-
-    public void RemoveCurrency(float f)
-    {
-        SetCurrency(currency + f);
+        GetComponent<TMP_Text>().text = currency.ToString();
     }
 
     private void Awake()
@@ -47,12 +38,5 @@ public class CurrencyManager : MonoBehaviour
         {
             CurrencyManager.instance = this;
         }
-        //GetComponent<Text>().text = currency.ToString();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

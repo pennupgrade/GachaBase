@@ -6,14 +6,6 @@ public class GameSceneManager : MonoBehaviour
 {
     public GameObject obstacle;
     private float timer;
-    private bool hasSpawned;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -22,7 +14,6 @@ public class GameSceneManager : MonoBehaviour
 
         if(timer <= 0)
         {
-            hasSpawned = true;
 
             GameObject o1 = Instantiate(obstacle);
             o1.tag = "Obstacle";

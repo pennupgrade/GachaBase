@@ -6,17 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuScreen.unity
+    guid: 302c87f8646137541ac70e53dcc155ae
+  - enabled: 1
+    path: Assets/Scenes/CreditScene.unity
+    guid: 5ff068dbdd84a46308eae49bb3cf3159
+  - enabled: 1
     path: Assets/Scenes/GachaScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Monsters/Turnip/TurnipPen.unity
-    guid: 62058280ba2a4bd40825b0aa7edaaa45
-  - enabled: 1
     path: Assets/Monsters/Lenny/LennyScene.unity
     guid: ab8702fd63c9b12499e0d7086ad2bda8
-  - enabled: 1
-    path: Assets/Monsters/Ringus/RingusPen.unity
-    guid: ec0b624f157f9614da36c891799c01c3
   - enabled: 1
     path: Assets/Monsters/Flint/level.unity
     guid: 538406057ad544443b1954b878d353a2
@@ -29,12 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Monsters/Duk/DukPen.unity
     guid: ed929ed24fc984ffb8fd90747ee70f82
-  - enabled: 1
-    path: Assets/Monsters/Oren Ji/OrenJi.unity
-    guid: bf4138e6c884ff24385068c7df31e581
-  - enabled: 1
-    path: Assets/Monsters/Bingus/TestPenScene.unity
-    guid: 141c33ba0c36bc64a9f449b41ccf4ef5
   - enabled: 1
     path: Assets/Monsters/MrOdee/MrOdee Scene.unity
     guid: 67f5107bd145d6f459f8493937ee253e
@@ -57,12 +51,6 @@ EditorBuildSettings:
     path: Assets/Monsters/DavidPumpkin/DavidPumpkin.unity
     guid: 946ba0fe9f78a4b7d9ad3260ad67516f
   - enabled: 1
-    path: Assets/Scenes/MenuScreen.unity
-    guid: 302c87f8646137541ac70e53dcc155ae
-  - enabled: 1
-    path: Assets/Scenes/CreditScene.unity
-    guid: 5ff068dbdd84a46308eae49bb3cf3159
-  - enabled: 1
-    path: Assets/Monsters/TimbBear/TimbBearScene.unity
-    guid: e584fa9d8d49e7e4daf290d1775bf576
+    path: Assets/Monsters/Orb/OrbScene.unity
+    guid: 31be71fd73f894a229f10cc2a68a1744
   m_configObjects: {}

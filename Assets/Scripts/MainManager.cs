@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 public class MainManager : MonoBehaviour
 {
@@ -11,6 +7,8 @@ public class MainManager : MonoBehaviour
     public static MainManager Instance => MainManager.instance;
 
     public GameObject backButton;
+    public GameObject CanvasGameObject;
+    public GameObject EventSystemGameObject;
     
     void Awake()
     {
@@ -23,18 +21,6 @@ public class MainManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void test() 

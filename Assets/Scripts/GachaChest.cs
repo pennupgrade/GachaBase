@@ -138,8 +138,9 @@ public class GachaChest : MonoBehaviour
 
         // pity system
         bool isPityRoll = false;
-        float numUniqueRatio = 1.0f - (uncollectedMonsters.Count / Pool.Count);
-        numUniqueRatio = numUniqueRatio > 0.5 ? 0.0f : numUniqueRatio / 12.0f;
+        float numUniqueRatio = 1.0f - (uncollectedMonsters.Count / (float) Pool.Count);
+        numUniqueRatio = numUniqueRatio < 0.5 ? 0.0f : numUniqueRatio / 3.0f;
+        Debug.Log(numUniqueRatio);
         float randomNumber = Random.Range(0.0f, 1.0f);
         float pityPercentageThreshold = Mathf.Clamp(pityPercentageUp + numUniqueRatio, 0.0f, 0.4f);
 

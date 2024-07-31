@@ -28,9 +28,12 @@ public class MenuScript : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        MainManager.Instance.CanvasGameObject.SetActive(false);
-        MainManager.Instance.EventSystemGameObject.SetActive(false);
-        
+        if (MainManager.Instance != null)
+        {
+            MainManager.Instance.CanvasGameObject.SetActive(false);
+            MainManager.Instance.EventSystemGameObject.SetActive(false);
+        }
+
         SceneManager.LoadScene("MenuScreen");
     }
 

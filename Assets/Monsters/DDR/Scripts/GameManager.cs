@@ -73,18 +73,18 @@ public class GameManager : MonoBehaviour
         CurrencyManager.Instance.Currency++; // Adding currency
 
         //Handling Movement
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             dragon.GetComponent<Dragon>().danceLeft();
-        } else if (Input.GetKeyDown(KeyCode.RightArrow))
+        } else if (Input.GetKeyDown(KeyCode.D))
         {
             dragon.GetComponent<Dragon>().danceRight();
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKeyDown(KeyCode.W))
         {
             dragon.GetComponent<Dragon>().danceUp();
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.S))
         {
             dragon.GetComponent<Dragon>().danceDown();
         }

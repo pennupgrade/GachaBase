@@ -16,37 +16,25 @@ public class BoxyBehaviour : MonoBehaviour
     {
         Vector3 character = transform.localScale;
         {
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+        if (Input.GetKeyDown(KeyCode.A)) {
 		    transform.Translate(-1,0,0);
             if (sprite != null) {
                 sprite.flipX = true;
             }
 		}
-        if (Input.GetKeyDown(KeyCode.RightArrow)) {
+        if (Input.GetKeyDown(KeyCode.D)) {
             transform.Translate(1,0,0);
             if (sprite != null) {
                 sprite.flipX = false;
             }
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow)) {
+        if (Input.GetKeyDown(KeyCode.W)) {
 		    transform.Translate(0,1,0);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow)) {
+        if (Input.GetKeyDown(KeyCode.S)) {
 		    transform.Translate(0,-1,0);
 		}
         }
-    }
-
-    void Animation()
-    {
-        if (Input.GetMouseButtonDown(0))
-            {
-                // Checking if the click will hit this monster's box collider .
-                // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                // RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
-                // return hit.collider != null && hit.collider.gameObject == this.gameObject;
-                
-            }
     }
     
     void OnCollisionEnter2D(Collision2D collision)

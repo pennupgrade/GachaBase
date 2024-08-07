@@ -175,11 +175,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlType: 0
-  overlay: {fileID: 611189146254741819}
+  overlay: {fileID: 1937947676480722042}
   imageSpace: {fileID: 5556817707409755375}
   imageWasd: {fileID: 7218795519904184925}
   imageMouse: {fileID: 6363128295389596462}
   controlsText: {fileID: 8636693143465157924}
+  slideInAnimationDuration: 0.4
+  opacityAnimationDuration: 0.2
 --- !u!1 &5556817707409755375
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements.Experimental;
 
-enum ControlType
+internal enum ControlType
 {
     Space,
     Wasd,
@@ -41,8 +41,8 @@ public class ControlsPopup : MonoBehaviour
         imageWasd.SetActive(false);
         imageMouse.SetActive(false);
         
-        controlsText.SetActive(false);
         tmp = controlsText.GetComponent<TMP_Text>();
+        tmp.color = Color.clear;
 
         overlay.anchoredPosition = new Vector2(-2100f, overlay.anchoredPosition.y);
         space.color = Color.clear;
@@ -51,36 +51,50 @@ public class ControlsPopup : MonoBehaviour
     }
 
     private void Start() {
-        StartCoroutine(AnimateOpacity());
-    }
-
-    private IEnumerator AnimateOpacity() {
-        yield return StartCoroutine(AnimateSlideIn());
-
-        var image = space;
         switch (controlType) {
             case ControlType.Space:
                 imageSpace.SetActive(true);
                 break;
             
             case ControlType.Wasd:
-                image = wasd;
                 imageWasd.SetActive(true);
                 break;
             
             case ControlType.Mouse:
-                image = mouse;
                 imageMouse.SetActive(true);
                 break;
             
             default:
                 throw new ArgumentOutOfRangeException();
         }
+        
+        StartCoroutine(AnimateOpacity());
+    }
+
+    private IEnumerator AnimateOpacity() {
+        yield return StartCoroutine(AnimateSlideIn());
+
+        var image = controlType switch {
+            ControlType.Wasd => wasd,
+            ControlType.Mouse => mouse,
+            _ => space
+        };
+        
+        var text = controlType switch {
+            ControlType.Space => "spacebar",
+            ControlType.Wasd => "WASD keys",
+            ControlType.Mouse => "mouse",
+            _ => throw new ArgumentOutOfRangeException()
+        };
+        tmp.text = $"Use the {text}\nto play this game!";
 
         var progress = 0f;
         while (progress <= opacityAnimationDuration) {
             progress += Time.deltaTime;
-            image.color = Color.Lerp(Color.clear, Color.white, progress / opacityAnimationDuration);
+            
+            var current = Color.Lerp(Color.clear, Color.white, progress / opacityAnimationDuration);
+            image.color = current;
+            tmp.color = current;
 
             yield return null;
         }

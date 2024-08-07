@@ -307,6 +307,14 @@ PrefabInstance:
       propertyPath: slideInAnimationDuration
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2530764931875157820, guid: c56f43e671e79a6418e2a6ebfcdaa137, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 979.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 2530764931875157820, guid: c56f43e671e79a6418e2a6ebfcdaa137, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 489.69
+      objectReference: {fileID: 0}
     - target: {fileID: 2855154263222932226, guid: c56f43e671e79a6418e2a6ebfcdaa137, type: 3}
       propertyPath: m_Pivot.x
       value: 0

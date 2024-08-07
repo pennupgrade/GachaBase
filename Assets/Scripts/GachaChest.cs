@@ -19,8 +19,7 @@ public class GachaChest : MonoBehaviour
     private int ROLL_COST;
     public int RollCost {
         get { return ROLL_COST; }
-    } 
-
+    }
 
     private Vector3 initialScale;
     public float targetScaleFactor;
@@ -86,6 +85,7 @@ public class GachaChest : MonoBehaviour
             if (Time.time >= showCardTime)
             {
                 Roll();
+                GetComponent<AudioSource>().Play();
                 isOpening = false;
             }
         }

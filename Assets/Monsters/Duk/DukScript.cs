@@ -79,14 +79,14 @@ public class DukScript : MonoBehaviour
 
         if (notStunned)
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.A))
             {
                 spriteRenderer.sprite = left;
                 rest = left;
                 speed = -10;
 
             }
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.D))
             {
                 spriteRenderer.sprite = right;
                 rest = right;

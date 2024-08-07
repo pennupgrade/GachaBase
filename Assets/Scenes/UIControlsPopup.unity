@@ -322,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 998277275}
     - target: {fileID: 1062155101549950682, guid: c56f43e671e79a6418e2a6ebfcdaa137, type: 3}
       propertyPath: controlType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1062155101549950682, guid: c56f43e671e79a6418e2a6ebfcdaa137, type: 3}
       propertyPath: opacityAnimationDuration

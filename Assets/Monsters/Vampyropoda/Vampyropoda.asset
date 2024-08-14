@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Vampyropoda
   sceneName: VampyropodaPen
-  iconSprite: {fileID: 21300000, guid: ca451a10945cdea44ba00691a61e7bb0, type: 3}
+  iconSprite: {fileID: 21300000, guid: 12202deb1f9634597a981499ab389948, type: 3}
   transparentSprite: {fileID: 21300000, guid: d178af848af8084429198232c13c1e50, type: 3}
   description: "Team Name: Bigger is Better \n\nDescription: A centuries old octopus
     vampire who sinks ships to suck the life force of her victims and steal their

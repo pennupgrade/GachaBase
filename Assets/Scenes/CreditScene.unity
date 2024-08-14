@@ -1750,6 +1750,8 @@ MonoBehaviour:
       <br> Anthony Ge <br> Jackie Li <br> Chris Yu <br> Raymond Feng <br> Diana Ouyang
       <br> Edi Orakci '
     Image: {fileID: 0}
+  - Text: <u>Sound</u> <br>Forest Ho-Chen
+    Image: {fileID: 0}
   - Text: '<u>Rock Babies</u> <br>Saksham Nagpal <br>Kimberly Liu <br>Kyle Zhang '
     Image: {fileID: 21300000, guid: 0f7e834cdf6e88e41b1773e495ddd746, type: 3}
   - Text: '<u>LSD</u> <br>Derek Ahn <br>Steven Chang <br>Ashrit Challa '
